@@ -1,0 +1,17 @@
+{
+  "name": "vanilla",
+  "version": "1.0.0",
+  "description": "personal-portfolio",
+  "main": "index.js",
+  "scripts": {
+    "start" : "live-server",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
+  },
+  "author": "Jose David Esmoris",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.0.4",
+    "live-server": "^1.2.1"
+  }
+}
