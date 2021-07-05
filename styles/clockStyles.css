@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap');
+
+
+.clock-container{
+    box-sizing: border-box;
+    overflow: hidden;
+    --clock-size : 60vw;
+    position: absolute;
+    width: var(--clock-size);
+    height: var(--clock-size);
+
+
+    transform-origin: center;
+    top: 30vh;
+    right: calc((100vw - var(--clock-size)) / 2);
+
+
+
+
+}
+
+.analog-watch{
+    color: white;
+
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+
+
+    border: #ffffff solid 2px;
+}
+
+.number{
+    padding: 2px;
+    --rotation: 0;
+    position: absolute;
+    text-align: center;
+
+    width: 100%;
+    height: 100%;
+    transform: rotate(calc(var(--rotation) *1deg));
+    font-family: 'Otomanopee One', sans-serif;
+}
+
+.number1{
+    --rotation: 30;
+}
+.number2{
+    --rotation: 60;
+
+}
+.number3{
+    --rotation: 90;
+
+}
+.number4{
+    --rotation: 120;
+
+}
+.number5{
+    --rotation: 150;
+
+}
+.number6{
+    --rotation: 180;
+
+}
+.number7{
+    --rotation: 210;
+
+}
+.number8{
+    --rotation: 240;
+
+}
+.number9{
+    --rotation: 270;
+
+}
+.number10{
+    --rotation: 300;
+
+}
+.number11{
+    --rotation: 330;
+
+}
+.number12{
+    --rotation: 0;
+
+}
+
+
+
+.analog-watch::after{
+    content: '';
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.89);
+    z-index: 30;
+    width: 10%;
+    height: 10%;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+
+}
+
+.analog-watch::before{
+    content: '';
+    position: absolute;
+    z-index: 5;
+    width: 70%;
+    height: 70%;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+
+    border: white dotted 2px;
+
+}
+
+.analog-watch .hand{
+    --rotation: 0;
+    background-color: black;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+
+
+
+    width: 5px;
+    height: 35%;
+
+    transform: translate(-50%) rotate(calc(var(--rotation) * 1deg));
+    transform-origin: bottom;
+
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+
+
+}
+
+.analog-watch .hand.hour{
+    width: 6px;
+    height: 20%;
+    z-index: 10;
+    background-color: #7f7f7f;
+}
+.analog-watch .hand.minute{
+    width: 10px;
+    height: 40%;
+    z-index: 11;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 32%);    border-right: white solid 2px;
+    border-left: #000000 solid 1px;
+
+
+}
+
+.analog-watch .hand.second{
+    width: 1px;
+    background-color: #ff0000;
+    z-index: 20;
+
+}

@@ -76,12 +76,6 @@ function languageManagement(language){
 function welcome(){
     const welcomePanel = document.getElementById('Welcome');
 
-    welcomePanel.classList.remove('d-none');
-    setTimeout(() => {
-        welcomePanel.classList.add('d-none');
-        document.getElementById('Page-cover').classList.add('d-none');
-        document.getElementById('Language-selection').classList.remove('d-none');
-    }, 3000);
 
 }
 
@@ -117,8 +111,8 @@ function shouldIStayOrShouldIGo(technology){
             panel.classList.add('d-none');
             break
     }
-    
-    
+
+
 
 
 }
@@ -127,10 +121,31 @@ function shouldIStayOrShouldIGo(technology){
 
 
 
+//Clock functions
+
+setInterval(setClock, 1000)
+
+const secondHand = document.querySelector('[data-second-hand]')
+const minuteHand = document.querySelector('[data-minute-hand]')
+const hourHand = document.querySelector('[data-hour-hand]')
+
+function setClock(){
+    const currentDate = new Date();
+    const secondsRatio = currentDate.getSeconds() /60;
+    const minutesRatio = (secondsRatio + currentDate.getMinutes()) / 60
+    const hoursRatio = (minutesRatio + currentDate.getHours()) / 12
+
+    setRotation(hourHand, hoursRatio);
+    setRotation(minuteHand, minutesRatio);
+    setRotation(secondHand, secondsRatio);
+}
 
 
+function setRotation(element, rotation){
+    element.style.setProperty('--rotation', rotation * 360);
+}
 
-
+setClock();
 
 //DOM functions
 window.shouldIStayOrShouldIGo = shouldIStayOrShouldIGo
