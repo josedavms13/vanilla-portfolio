@@ -1,72 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <link rel="stylesheet" href="./styles/styles.css">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
 
-   <title>Jose David Esmoris</title>
+    <title>Jose David Esmoris</title>
 </head>
 <body>
-   
-   <header class="header d-none">
-      <nav class="navbar navbar-dark bg-dark sticky-top container-md navbar-collapse">
-         <div class="container-fluid">
+
+<header class="header d-none">
+    <nav class="navbar navbar-dark bg-dark sticky-top container-md navbar-collapse">
+        <div class="container-fluid">
             <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Nav-list-container" aria-controls="Nav-list-container" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Nav-list-container"
+                    aria-controls="Nav-list-container" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="Nav-list-container">
 
             </div>
-         </div>
-      </nav>
-   </header>
+        </div>
+    </nav>
+</header>
 
-   <div class="page-cover" id="Page-cover"></div>
+<div class="page-cover" id="Page-cover"></div>
 
-   <div class="welcome" id="Welcome">
-      <h1>Welcome!</h1>
-      <h2>Thank you for seeing my portfolio! </h2>
-      </br>
-      <h2> Gracias por ver mi portafolio!</h2>
-   </div>
+<div class="welcome" id="Welcome">
+    <h1>Welcome!</h1>
+    <h2>Thank you for seeing my portfolio! </h2>
+    </br>
+    <h2> Gracias por ver mi portafolio!</h2>
+</div>
 
-   <div class="language-selection d-none" id="Language-selection">
+<div class="language-selection d-none" id="Language-selection">
 
-      <form onsubmit="preventDefault()">
-         <label class="form-label" for="Name-field">If you want type your Name <br> Si quieres ingresa tu nombre</label>
-         <input class="form-control" type="text" id="Name-field" name="name-field" autofocus="autofocus">
-      </form>
-      <div class="button-sections">
+    <form onsubmit="preventDefault()">
+        <label class="form-label" for="Name-field">If you want type your Name <br> Si quieres ingresa tu nombre</label>
+        <input class="form-control" type="text" id="Name-field" name="name-field" autofocus="autofocus">
+    </form>
+    <div class="button-sections">
 
-         <button class="btn m-2" id="Spanish-button">Español</button>
-         <button class="btn m-2" id="English-button">English</button>
-      </div>
-
-
-   </div>
-
-  
-
-   <div id="React-invitation-container" class="d-none">
-
-      <!-- changes dynamically -->              
-      <h4>Porfavor  considera ver mi portafolio en react</h4>
-      <button id="React-button" class="React-button"> Muestrame el portafolio de React</button>
-      <button id="Vanilla-button" class="Vanilla-button">Dejame aquí en la version vanilla</button>
+        <button class="btn m-2" id="Spanish-button">Español</button>
+        <button class="btn m-2" id="English-button">English</button>
+    </div>
 
 
-
-   </div>
-
+</div>
 
 
-   <script src="./index.js" type="module"></script>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<div id="React-invitation-container" class="d-none">
+
+    <!-- changes dynamically -->
+    <h4>Porfavor considera ver mi portafolio en react</h4>
+    <button id="React-button" class="React-button"> Muestrame el portafolio de React</button>
+    <button id="Vanilla-button" class="Vanilla-button">Dejame aquí en la version vanilla</button>
+
+
+</div>
+
+<section class="experience-container">
+
+    <h2>Proyectos</h2>
+
+    <div class="projects">
+
+        <div class="real-projects d-none">
+            <div class="suitter">
+                <div class="tittle">
+
+                </div>
+                <div class="image">
+                    image
+                </div>
+                <div class="descriptions">
+                    <h5>Description</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti facilis, in libero magni
+                        quisquam repudiandae.</p>
+                </div>
+
+                <div class="technologies">
+                    <h5>Technologies</h5>
+                    <div class="tech-list">
+                        <div class="front">
+                            <h6>Frontend</h6>
+                            <li>
+                                <ul>React</ul>
+                            </li>
+                        </div>
+                        <div class="back">
+                            <h6>Backend</h6>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="practice-projects">
+            <h2>Practice Projects</h2>
+
+            <div class="app-trivia">
+                <h4>App trivia</h4>
+                <div class="trivia-image">
+                    image
+                </div>
+                <h6>Description</h6>
+                <span>Es juego de trivia que tiene dos modos de juego: <br>
+                  El primer modo es el modo default, que consiste en contestar las preguntas y conseguir puntos. Consta de tres niveles de dificultad, a medida que juegas y aciertas las preguntas subes de nivel y así mismo las preguntas acertadas dan mas puntos. <br> El segundo modo de juego te permite filtrar las preguntas pero no optienes puntos ni niveles.
+               </span>
+                <div class="characteristics">
+                    <h6>Characteristics</h6>
+                    <div class="characteristics-list">
+                        <ul>
+                            <li>Api consuming, async functions</li>
+                            <li>Original and dynamic music depending on level</li>
+                            <li>Leveling system in which your level increase or decrease depending on your right and
+                                wrong answers.
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="technologies">
+                    <h6>Technologies</h6>
+                    <p>HTML5, CSS y JavaScript Vanilla</p>
+                </div>
+
+                <button>GitHub</button>
+                <button>Link</button>
+            </div>
+
+
+            <div class="pokedex">
+
+                <h4>Pokedex Web</h4>
+                <div class="trivia-image">
+                    image
+                </div>
+                <h6>Description</h6>
+                <span>
+               Es una app de pokedex en la cual puedes realizar búsquedas de pokemons filtrando por nombre, tipo y habilidad. <br>
+               Tiene un sistema de sugerencias que permite hacer la búsqueda facilmente sin importar que el usuario tenga poco conocimiento del mundo de pokemon.
+            </span>
+                <div class="characteristics">
+                    <h6>Characteristics</h6>
+                    <div class="characteristics-list">
+                        <ul>
+                            <li>Login and register system</li>
+                            <li>Api consuming using ReactJS</li>
+                            <li>CSS Animations</li>
+                            <li>Suggesting and filtering system</li>
+                            <li>Use of React Routes</li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="technologies">
+                    <h6>Technologies</h6>
+                    <ul>
+                        <li>ReactJS</li>
+                        <li>ReactRoutes</li>
+                        <li>useContext hook</li>
+                        <li>useForm hook</li>
+                    </ul>
+                </div>
+
+                <button>GitHub</button>
+                <button>Link</button>
+
+            </div>
+        </div>
+
+
+        <div class="details">
+            <div class="clock-container">
+
+                <div class="analog-watch">
+                    <div class="hand hour"></div>
+                    <div class="hand minute"></div>
+                    <div class="hand second"></div>
+                    <div class="number number1">1</div>
+                    <div class="number number2">2</div>
+                    <div class="number number3">3</div>
+                    <div class="number number4">4</div>
+                    <div class="number number5">5</div>
+                    <div class="number number6">6</div>
+                    <div class="number number7">7</div>
+                    <div class="number number8">8</div>
+                    <div class="number number9">9</div>
+                    <div class="number number10">10</div>
+                    <div class="number number11">11</div>
+                    <div class="number number12">12</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<script src="./index.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
 </body>
 </html>

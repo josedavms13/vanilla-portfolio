@@ -73,7 +73,8 @@ html{
     align-items: center;
     text-align: center;
 
-    background: #34383F;
+    background: rgba(12, 22, 42, 0.6);
+    backdrop-filter: blur(20px);
     color: #BDBEB6;
 
     position: absolute;
@@ -98,3 +99,19 @@ html{
     border: rgba(0, 0, 0, 0.81) solid 2px;
 }
 
+
+.clock-container{
+    /*position: fixed;*/
+    background-color: red;
+    width: 300px;
+    height: 300px;
+
+
+    top: calc(50vh - 150px);
+    right: calc(50vw - 150px);
+
+}
+
+.analog-watch{
+    position: relative;
+}
