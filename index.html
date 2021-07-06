@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="./styles/clockStyles.css">
-    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="styles/componentsStyles.css">
+    <link rel="stylesheet" href="./styles/sectionsStyles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
@@ -15,10 +16,34 @@
 </head>
 <body>
 
-<header class="header">
+<header class="header d-none">
+
+
     <nav class="navbar navbar-dark bg-dark fixed-top container-md navbar-collapse">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <div class="clock-container" id="Clock-container">
+
+                <div class="analog-watch" id="Clock" >
+                    <div class="hand hour" data-hour-hand></div>
+                    <div class="hand minute" data-minute-hand></div>
+                    <div class="hand second" data-second-hand></div>
+                    <div class="number number1">1</div>
+                    <div class="number number2">2</div>
+                    <div class="number number3">3</div>
+                    <div class="number number4">4</div>
+                    <div class="number number5">5</div>
+                    <div class="number number6">6</div>
+                    <div class="number number7">7</div>
+                    <div class="number number8">8</div>
+                    <div class="number number9">9</div>
+                    <div class="number number10">10</div>
+                    <div class="number number11">11</div>
+                    <div class="number number12">12</div>
+                </div>
+            </div>
+
+            <a class="navbar-brand" href="#"><i>JOSE_ESMORIS_FRONTEND</i></a>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Nav-list-container"
                     aria-controls="Nav-list-container" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -26,8 +51,11 @@
             <div class="collapse navbar-collapse" id="Nav-list-container">
 
             </div>
+
+
         </div>
     </nav>
+
 </header>
 
 
@@ -35,32 +63,32 @@
 <!--  -->
 <!--</div>-->
 
-<div class="language-selection d-none" id="Language-selection">
-    <div class="button-sections d-flex flex-sm-column container-fluid">
-        <button class="btn m-2" id="Spanish-button">Español</button>
-        <button class="btn m-2" id="English-button">English</button>
-    </div>
-
-
+<div class="language-selection" id="Language-selection">
+        <button class="btn" id="Spanish-button">Español</button>
+        <button class="btn" id="English-button">English</button>
 </div>
 
 
 <div id="React-invitation-container" class="d-none">
 
     <!-- changes dynamically -->
-    <h4>Porfavor considera ver mi portafolio en react</h4>
-    <button id="React-button" class="React-button"> Muestrame el portafolio de React</button>
-    <button id="Vanilla-button" class="Vanilla-button">Dejame aquí en la version vanilla</button>
+    <h4>Porfavor considera ver mi portafolio en React</h4>
+    <button type="button" id="React-button" class="react-button btn btn-success"> Muestrame el portafolio de React</button>
+    <button type="button" id="Vanilla-button" class="vanilla-button btn btn-primary">Dejame aquí en la version vanilla</button>
 
 
 </div>
 
-<section class="experience-container">
+<section class="welcome section d-none">
+    <h1 id="Welcome-title"></h1>
+</section>
+
+<section class="experience-container section d-none">
 
     <h2>Proyectos</h2>
 
     <div class="projects">
-
+        <h2 id="Real-projects-title"> <!--  changes dynamically--></h2>
         <div class="real-projects d-none">
             <div class="suitter">
                 <div class="tittle">
@@ -95,8 +123,7 @@
         </div>
 
         <div class="practice-projects">
-            <h2>Practice Projects</h2>
-
+          <h2 id="Practice-projects-title"> <!--  changes dynamically--></h2>
             <div class="app-trivia">
                 <h4>App trivia</h4>
                 <div class="trivia-image">
@@ -170,28 +197,7 @@
         </div>
 
 
-        <div class="details">
-            <div class="clock-container">
 
-                <div class="analog-watch" >
-                    <div class="hand hour" data-hour-hand></div>
-                    <div class="hand minute" data-minute-hand></div>
-                    <div class="hand second" data-second-hand></div>
-                    <div class="number number1">1</div>
-                    <div class="number number2">2</div>
-                    <div class="number number3">3</div>
-                    <div class="number number4">4</div>
-                    <div class="number number5">5</div>
-                    <div class="number number6">6</div>
-                    <div class="number number7">7</div>
-                    <div class="number number8">8</div>
-                    <div class="number number9">9</div>
-                    <div class="number number10">10</div>
-                    <div class="number number11">11</div>
-                    <div class="number number12">12</div>
-                </div>
-            </div>
-        </div>
 
     </div>
 
