@@ -36,11 +36,11 @@
     border-radius: 50%;
 
 
-    border: #000000 solid 2px;
+    border: rgba(255, 255, 255, 0.84) solid 1px;
 }
 
 .number{
-    padding: 2px;
+    padding: 3px;
     --rotation: 0;
     position: absolute;
     text-align: center;

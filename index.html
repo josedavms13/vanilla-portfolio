@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./styles/clockStyles.css">
     <link rel="stylesheet" href="styles/componentsStyles.css">
     <link rel="stylesheet" href="./styles/sectionsStyles.css">
+    <link rel="stylesheet" href="./styles/globalSettings.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
@@ -23,7 +24,7 @@
         <div class="container-fluid">
             <div class="clock-container" id="Clock-container">
 
-                <div class="analog-watch" id="Clock" >
+                <div class="analog-watch" id="Clock">
                     <div class="hand hour" data-hour-hand></div>
                     <div class="hand minute" data-minute-hand></div>
                     <div class="hand second" data-second-hand></div>
@@ -42,7 +43,7 @@
                 </div>
             </div>
 
-            <a class="navbar-brand" href="#"><i>JOSE_ESMORIS_FRONTEND</i></a>
+            <a class="navbar-brand" href="#"><i>Home</i></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Nav-list-container"
                     aria-controls="Nav-list-container" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,14 +59,18 @@
 
 </header>
 
+<video id="Background-video" width="1920" height="1080" autoplay>
+    <source src="./media/videoding.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 
 <!--<div class="welcome" id="Welcome">-->
 <!--  -->
 <!--</div>-->
 
 <div class="language-selection" id="Language-selection">
-        <button class="btn" id="Spanish-button">Español</button>
-        <button class="btn" id="English-button">English</button>
+    <button class="btn" id="Spanish-button">Español</button>
+    <button class="btn" id="English-button">English</button>
 </div>
 
 
@@ -73,17 +78,19 @@
 
     <!-- changes dynamically -->
     <h4>Porfavor considera ver mi portafolio en React</h4>
-    <button type="button" id="React-button" class="react-button btn btn-success"> Muestrame el portafolio de React</button>
-    <button type="button" id="Vanilla-button" class="vanilla-button btn btn-primary">Dejame aquí en la version vanilla</button>
+    <button type="button" id="React-button" class="react-button btn btn-success"> Muestrame el portafolio de React
+    </button>
+    <button type="button" id="Vanilla-button" class="vanilla-button btn btn-primary">Dejame aquí en la version vanilla
+    </button>
 
 
 </div>
 
-<section class="welcome section d-none">
+<section class="welcome section d-none" id="Welcome">
     <h1 id="Welcome-title"></h1>
 </section>
 
-<section class="experience-container section d-none">
+<section class="experience-container section d-none" id="Experience-container">
 
     <h2>Proyectos</h2>
 
@@ -123,7 +130,7 @@
         </div>
 
         <div class="practice-projects">
-          <h2 id="Practice-projects-title"> <!--  changes dynamically--></h2>
+            <h2 id="Practice-projects-title"> <!--  changes dynamically--></h2>
             <div class="app-trivia">
                 <h4>App trivia</h4>
                 <div class="trivia-image">
@@ -195,8 +202,6 @@
 
             </div>
         </div>
-
-
 
 
     </div>

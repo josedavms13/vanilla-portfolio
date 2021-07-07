@@ -89,15 +89,24 @@ function languageManagement(language) {
 
 function welcome() {
     const welcomePanel = document.getElementById('Welcome');
-
-
 }
-
 welcome();
+
+
+const video = document.getElementById('Background-video')
+document.addEventListener('scroll', (event)=> {
+    const yOffset = window.pageYOffset/1000;
+    video.style.setProperty('--video-position', yOffset)
+});
+
+
 
 // react invitation
 
 function shouldIStayOrShouldIGo(technology) {
+
+    document.getElementById('Experience-container').classList.remove('d-none')
+    document.getElementById('Welcome').classList.remove('d-none')
 
     console.log('clicked')
 
@@ -194,7 +203,6 @@ hoverInTL.to('#Clock', {
     })
 
 clock.addEventListener('click', clockAmp)
-
 
 
 //DOM functions

@@ -1,15 +1,18 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,400;1,400&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;700&display=swap');
 
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 .navbar{
     position: absolute;
+    border-bottom: rgba(255, 255, 255, 0.55) solid 1px;
+    box-shadow: white 0 0.1px 4px  ;
+    opacity: 0.98;
+    backdrop-filter: blur(5px);
 }
 
 
@@ -19,7 +22,13 @@
     color: white;
 }
 
-
+video{
+    --video-position: 0;
+    position: fixed;
+    right: 0;
+    top: var(--video-position);
+    z-index: -1;
+}
 
 .page-cover{
     height: 100vh;
@@ -99,6 +108,7 @@
 #React-invitation-container h4{
     border-bottom: rgba(255, 255, 255, 0) solid 1px;
     transition: all 0.5s;
+    user-select: none;
 }
 
 #React-invitation-container h4:hover{
