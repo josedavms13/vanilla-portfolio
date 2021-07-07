@@ -28,6 +28,15 @@ video{
     right: 0;
     top: var(--video-position);
     z-index: -1;
+
+}
+
+.video-cover{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(41, 66, 83, 0.22);
+    backdrop-filter: blur(1px);
 }
 
 .page-cover{

@@ -11,8 +11,8 @@ export default class languageManager {
             spanish: ``
         }
         this.navbar = this.setNavbar();
+        this.navbatSections = this.setNavbarSections();
         this.reactInvitation = this.setReactInvitation();
-
     }
 
     setReactInvitation() {
@@ -62,6 +62,26 @@ export default class languageManager {
             
             `
 
+        }
+    }
+
+    setNavbarSections(){
+        switch (this.language){
+            case 'english':
+                return {
+                    home: 'Home',
+                    experience : 'Experience',
+                    skills : 'Skills',
+                    contact : 'Contact'
+                }
+
+            case 'spanish':
+                return{
+                    home: 'Inicio',
+                    experience: 'Experiencia',
+                    skills: 'Habilidades',
+                    contact: 'Contacto'
+                }
         }
     }
 

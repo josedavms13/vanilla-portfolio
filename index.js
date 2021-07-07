@@ -71,15 +71,10 @@ function languageManagement(language) {
     //Experience section
     LANGUAGE_STATE.setExperienceTittles();
 
+    //Set Navbar Label
+    navbarLabel.innerText = LANGUAGE_STATE.navbatSections.home;
+
 }
-
-
-
-
-
-
-
-
 
 
 //endregion language Management
@@ -92,43 +87,20 @@ function welcome() {
 }
 welcome();
 
+//region Play Video
+const video = document.getElementById('Background-video');
 
-const video = document.getElementById('Background-video')
-document.addEventListener('scroll', (event)=> {
-    const yOffset = window.pageYOffset/1000;
-    video.style.setProperty('--video-position', yOffset)
-});
+async function playVideo(){
+    try{
+        await video.play();
+    }catch {
 
-
-
-// react invitation
-
-function shouldIStayOrShouldIGo(technology) {
-
-    document.getElementById('Experience-container').classList.remove('d-none')
-    document.getElementById('Welcome').classList.remove('d-none')
-
-    console.log('clicked')
-
-    sectionClassSection.classList.remove('d-none');
-
-    const panel = document.getElementById('React-invitation-container');
-
-    switch (technology) {
-        case 'react':
-            console.log('to react portfolio');
-            break
-
-        case 'vanilla':
-            panel.classList.add('d-none');
-            break
-
-        default:
-            panel.classList.add('d-none');
-            break
     }
 
 }
+playVideo();
+
+//endregion Play Video
 
 
 //region Clock functions
@@ -160,7 +132,36 @@ setClock();
 //endregion Clock functions
 
 
-// Animations
+//region react invitation
+function shouldIStayOrShouldIGo(technology) {
+
+    document.getElementById('Experience-container').classList.remove('d-none')
+    document.getElementById('Welcome').classList.remove('d-none')
+
+    console.log('clicked')
+
+    sectionClassSection.classList.remove('d-none');
+
+    const panel = document.getElementById('React-invitation-container');
+
+    switch (technology) {
+        case 'react':
+            console.log('to react portfolio');
+            break
+
+        case 'vanilla':
+            panel.classList.add('d-none');
+            break
+
+        default:
+            panel.classList.add('d-none');
+            break
+    }
+}
+//endregion react invitation
+
+
+//region Clock Animations
 
 const clock = document.getElementById('Clock-container');
 
@@ -203,6 +204,30 @@ hoverInTL.to('#Clock', {
     })
 
 clock.addEventListener('click', clockAmp)
+//endregion Clock Animations
+
+
+//navbar label
+const navbarLabel = document.getElementById('Navbar-label');
+
+let windowOffset;
+document.addEventListener('scroll', ()=>{
+    windowOffset= window.pageYOffset;
+    console.log(windowOffset);
+
+    if(windowOffset < 270){
+        navbarLabel.innerText = LANGUAGE_STATE.navbatSections.home;
+        console.log('home');
+
+    }
+
+    if(windowOffset > 270){
+        navbarLabel.innerText = LANGUAGE_STATE.navbatSections.experience;
+        console.log('experience');
+    }
+})
+
+
 
 
 //DOM functions
