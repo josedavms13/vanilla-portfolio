@@ -119,12 +119,12 @@ export default class languageManager {
     setExperienceTittles() {
         switch (this.language) {
             case 'english':
-                document.getElementById('Real-projects-title').innerText = `Real Projects`
-                document.getElementById('Practice-projects-title').innerText = `Practice Projects`
+            `        
+                <h2 id="Real-projects-title"> Real projects</h2>
+                <p id="Real-projects-disclaimer"> <strong>Disclaimer:</strong> Some of this pro</p>
+            `
                 break
             case 'spanish':
-                document.getElementById('Real-projects-title').innerText = `Proyectos reales`
-                document.getElementById('Practice-projects-title').innerText = `Proyectos de Práctica`
                 break
         }
     }
