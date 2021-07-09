@@ -1,9 +1,11 @@
-export default class languageManager {
+'use strict'
+import experienceSectionManager from "./experienceSectionManager.js";
 
+export default class languageManager {
 
     constructor(setLanguage) {
 
-
+        // Elements to be used in index.js
         this.language = setLanguage;
         this.reactInvitation = {
             english: ``,
@@ -13,6 +15,8 @@ export default class languageManager {
         this.navbar = this.setNavbar();
         this.navbatSections = this.setNavbarSections();
         this.reactInvitation = this.setReactInvitation();
+
+        this.experienceManager = new experienceSectionManager(this.language);
     }
 
     setReactInvitation() {
@@ -40,9 +44,9 @@ export default class languageManager {
                 // ------------- Spanish -----------------------
                 return `
             <li class="nav-item">
-               <a class="nav-link active" aria-current="page" href="/">Home</a>
+               <a class="nav-link active" aria-current="page" href="#Welcome">Home</a>
             </li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Proyectos</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#Real-projects-titles-container">Proyectos</a></li>
             <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Habilidades</a></li>
             <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Hoja de vida / CV</a></li>
             <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Contacto</a></li>
@@ -85,7 +89,7 @@ export default class languageManager {
         }
     }
 
-    setWelcome(experience) {
+    setWelcome(yearsOfExperience) {
         switch (this.language) {
             case 'english':
                 document.querySelector('.welcome').innerHTML = `
@@ -93,7 +97,7 @@ export default class languageManager {
                     <div class="welcome-description">
                       <p>My name is Jose David Esmoris</p>
                       <p>I am a frontend developer</p>
-                      <p>I have ${experience} years of experience</p>
+                      <p>I have ${yearsOfExperience} years of experience</p>
                       <p>and I'd like to be part of your team</p>
                    </div>
 
@@ -105,7 +109,7 @@ export default class languageManager {
                    <div class="welcome-description">
                       <p>Yo soy Jose David Esmoris,</p>
                        <p>soy desarrollador frontend</p>
-                      <p>Tengo ${experience} años de experiencia</p>
+                      <p>Tengo ${yearsOfExperience} años de experiencia</p>
                       <p>y quisiera ser parte de tu equipo</p>
                       
                   </div>
@@ -116,18 +120,6 @@ export default class languageManager {
         }
     }
 
-    setExperienceTittles() {
-        switch (this.language) {
-            case 'english':
-            `        
-                <h2 id="Real-projects-title"> Real projects</h2>
-                <p id="Real-projects-disclaimer"> <strong>Disclaimer:</strong> Some of this pro</p>
-            `
-                break
-            case 'spanish':
-                break
-        }
-    }
 
 
 }

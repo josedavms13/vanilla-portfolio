@@ -1,0 +1,27 @@
+
+.projects-tittle-h2{
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 10px;
+
+}
+
+.real-projects-title{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+.real-projects-title h2{
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: black solid 1px;
+    width: 80%;
+}
+
+.real-projects-disclaimer{
+    padding: 30px
+}

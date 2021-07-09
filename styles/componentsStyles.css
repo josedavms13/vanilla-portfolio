@@ -23,20 +23,31 @@
 }
 
 video{
-    --video-position: 0;
     position: fixed;
-    right: 0;
-    top: var(--video-position);
+    left: -40vw;
+    top: 0;
     z-index: -1;
+    height: 100vh;
+
+    min-width: 100vw;
 
 }
 
+@media (max-width: 1200px) {
+    video{
+        --video-position: 0;
+    }
+}
+
 .video-cover{
+    top: 0;
+    left: 0;
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(41, 66, 83, 0.22);
+    background-color: rgba(41, 66, 83, 0.47);
     backdrop-filter: blur(1px);
+    z-index: -1;
 }
 
 .page-cover{

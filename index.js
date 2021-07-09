@@ -43,8 +43,8 @@ const languageSelection = document.getElementById("Language-selection");
 const reactInvitation = document.getElementById("React-invitation-container");
 
 const sectionClassSection = document.querySelector('.section')
-//region language Management
 
+//region language Management
 function languageManagement(language) {
 
     LANGUAGE_STATE = new languageManager(language);
@@ -69,10 +69,11 @@ function languageManagement(language) {
 
 
     //Experience section
-    LANGUAGE_STATE.setExperienceTittles();
+    // LANGUAGE_STATE.setExperienceTittles();
 
     //Set Navbar Label
     navbarLabel.innerText = LANGUAGE_STATE.navbatSections.home;
+
 
 }
 
@@ -90,15 +91,17 @@ welcome();
 //region Play Video
 const video = document.getElementById('Background-video');
 
-async function playVideo(){
-    try{
-        await video.play();
-    }catch {
+setTimeout(()=>{video.play()},10000)
 
-    }
-
-}
-playVideo();
+// async function playVideo(){
+//     try{
+//         await video.play();
+//     }catch {
+//
+//     }
+//
+// }
+// playVideo();
 
 //endregion Play Video
 
@@ -130,35 +133,6 @@ function setRotation(element, rotation) {
 setClock();
 
 //endregion Clock functions
-
-
-//region react invitation
-function shouldIStayOrShouldIGo(technology) {
-
-    document.getElementById('Experience-container').classList.remove('d-none')
-    document.getElementById('Welcome').classList.remove('d-none')
-
-    console.log('clicked')
-
-    sectionClassSection.classList.remove('d-none');
-
-    const panel = document.getElementById('React-invitation-container');
-
-    switch (technology) {
-        case 'react':
-            console.log('to react portfolio');
-            break
-
-        case 'vanilla':
-            panel.classList.add('d-none');
-            break
-
-        default:
-            panel.classList.add('d-none');
-            break
-    }
-}
-//endregion react invitation
 
 
 //region Clock Animations
@@ -207,7 +181,36 @@ clock.addEventListener('click', clockAmp)
 //endregion Clock Animations
 
 
-//navbar label
+//region React invitation
+function shouldIStayOrShouldIGo(technology) {
+
+    document.getElementById('Experience-container').classList.remove('d-none')
+    document.getElementById('Welcome').classList.remove('d-none')
+
+    // console.log('clicked')
+
+    sectionClassSection.classList.remove('d-none');
+
+    const panel = document.getElementById('React-invitation-container');
+
+    switch (technology) {
+        case 'react':
+            console.log('to react portfolio');
+            break
+
+        case 'vanilla':
+            panel.classList.add('d-none');
+            break
+
+        default:
+            panel.classList.add('d-none');
+            break
+    }
+}
+//endregion react invitation
+
+
+//region Navbar label
 const navbarLabel = document.getElementById('Navbar-label');
 
 let windowOffset;
@@ -226,13 +229,13 @@ document.addEventListener('scroll', ()=>{
         console.log('experience');
     }
 })
+//endregion navbar label
 
 
 
 
-//DOM functions
+
+//region DOM functions
 window.shouldIStayOrShouldIGo = shouldIStayOrShouldIGo
 
-//test export
-
-export default languageManager
+//endregion DOM functions
