@@ -52,7 +52,7 @@ export default class experienceSectionManager {
                     <h2 id="Real-projects-title"> Proyectos reales</h2>
                     <div class="real-projects-disclaimer">
                         <h6>Aviso! :</h6>
-                        <p class="disclaimer-p"> Estas son muestras demo de los proyectos reales.</p>
+                        <p class="disclaimer-p"> Estas son muestras demo de los proyectos reales. </p>
                         <p class="disclaimer-p">Algunos clientes no me permiten mostrar los proyectos que realice para ellos </p>
                     
                     </div>

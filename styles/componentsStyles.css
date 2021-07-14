@@ -32,10 +32,11 @@ video{
     min-width: 100vw;
 
 }
-
-@media (max-width: 1200px) {
+@media (min-width: 1200px) {
     video{
-        --video-position: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
     }
 }
 

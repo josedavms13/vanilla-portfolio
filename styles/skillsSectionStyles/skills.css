@@ -1,0 +1,13 @@
+.skills-container{
+    background-color: red;
+}
+
+.main-skills-container i:hover{
+    color: yellow;
+}
+.ext-icon{
+    width: 20px;
+}
+.ext-icon img{
+    width: 100%;
+}
