@@ -55,8 +55,11 @@ function languageManagement(language) {
     // Display react options
     languageSelection.classList.add('d-none');
     reactInvitation.classList.remove('d-none');
+    
+
     //endregion show and hide
 
+    
 
     //Invitation to React Portfolio
     setHtmlText('React-invitation-container', LANGUAGE_STATE.reactInvitation);
@@ -66,6 +69,8 @@ function languageManagement(language) {
 
     //welcome
     LANGUAGE_STATE.setWelcome()
+    
+    
 
 
     //Experience section
@@ -184,8 +189,14 @@ clock.addEventListener('click', clockAmp)
 //region React invitation
 function shouldIStayOrShouldIGo(technology) {
 
-    document.getElementById('Experience-container').classList.remove('d-none')
-    document.getElementById('Welcome').classList.remove('d-none')
+    document.getElementById('Experience-container').classList.remove('d-none');
+    document.getElementById('Welcome').classList.remove('d-none');
+
+
+    //skills
+    document.getElementById('Skills-container').classList.remove('d-none');
+
+
 
     // console.log('clicked')
 
@@ -226,6 +237,11 @@ document.addEventListener('scroll', ()=>{
 
     if(windowOffset > 270){
         navbarLabel.innerText = LANGUAGE_STATE.navbatSections.experience;
+        console.log('experience');
+    }
+
+    if(windowOffset > 800){
+        navbarLabel.innerText = LANGUAGE_STATE.navbatSections.skills;
         console.log('experience');
     }
 })

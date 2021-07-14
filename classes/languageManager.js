@@ -1,5 +1,6 @@
 'use strict'
 import experienceSectionManager from "./experienceSectionManager.js";
+import skillsSectionManager from "./skillsSectionManager.js";
 
 export default class languageManager {
 
@@ -17,6 +18,7 @@ export default class languageManager {
         this.reactInvitation = this.setReactInvitation();
 
         this.experienceManager = new experienceSectionManager(this.language);
+        this.skillsManager = new skillsSectionManager(this.language);
     }
 
     setReactInvitation() {
