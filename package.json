@@ -4,7 +4,7 @@
   "description": "personal-portfolio",
   "main": "index.js",
   "scripts": {
-    "start" : "live-server",
+    "start": "live-server",
     "test": "jest",
     "test:coverage": "jest --coverage"
   },
@@ -13,5 +13,9 @@
   "devDependencies": {
     "jest": "^27.0.4",
     "live-server": "^1.2.1"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "emailjs-com": "^3.2.0"
   }
 }

@@ -1,6 +1,7 @@
 'use strict'
 import languageManager from "./classes/languageManager.js";
 import setHtmlText from "./utilities/setHtmlText.js"
+import emailSubmit from "./services/emailSubmit.js";
 
 //region GLOBAL VARIABLES
 let LANGUAGE_STATE;
@@ -96,17 +97,18 @@ welcome();
 //region Play Video
 const video = document.getElementById('Background-video');
 
-setTimeout(()=>{video.play()},10000)
 
-// async function playVideo(){
-//     try{
-//         await video.play();
-//     }catch {
-//
-//     }
-//
-// }
-// playVideo();
+async function playVideo(){
+    try{
+        await setTimeout(()=>{video.play()},10000)
+
+    }catch {
+
+    }
+
+}
+// playVideo()
+//     .then(null);
 
 //endregion Play Video
 
@@ -248,10 +250,31 @@ document.addEventListener('scroll', ()=>{
 //endregion navbar label
 
 
+//region sending contact info
 
+const btn = document.getElementById('Submit-button');
+
+document.getElementById('Contact-form')
+    .addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        btn.value = 'Sending...';
+
+        const serviceID = 'default_service';
+        const templateID = 'template_sccvwka';
+
+        emailjs.sendForm(serviceID, templateID, this)
+            .then(() => {
+                btn.value = 'Send Email';
+                alert('Sent!');
+            }, (err) => {
+                btn.value = 'Send Email';
+                alert(JSON.stringify(err));
+            });
+    });
 
 
 //region DOM functions
-window.shouldIStayOrShouldIGo = shouldIStayOrShouldIGo
-
+window.shouldIStayOrShouldIGo = shouldIStayOrShouldIGo;
+// window
 //endregion DOM functions
