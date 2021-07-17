@@ -1,3 +1,11 @@
+.experience-container{
+    background-color: rgba(255, 255, 255, 0.79);
+    padding: 20px;
+
+    color: black;
+    margin-top: 30px;
+}
+
 
 .projects-tittle-h2{
     font-weight: bold;

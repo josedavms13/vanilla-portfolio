@@ -70,8 +70,8 @@ function languageManagement(language) {
 
     //welcome
     LANGUAGE_STATE.setWelcome()
-    
-    
+
+
 
 
     //Experience section
@@ -80,6 +80,9 @@ function languageManagement(language) {
     //Set Navbar Label
     navbarLabel.innerText = LANGUAGE_STATE.navbatSections.home;
 
+    //Set Contact Labels
+
+
 
 }
 
@@ -87,28 +90,28 @@ function languageManagement(language) {
 //endregion language Management
 
 
-//show welcome
-
-function welcome() {
-    const welcomePanel = document.getElementById('Welcome');
-}
-welcome();
-
 //region Play Video
 const video = document.getElementById('Background-video');
-
+video.addEventListener('canplay', playVideo);
 
 async function playVideo(){
     try{
-        await setTimeout(()=>{video.play()},10000)
+        await setTimeout(()=>{
+            video.play();
+            console.log('playing video')
+            },5000);
+        await showThings();
 
     }catch {
-
+        await playVideo();
     }
 
 }
-// playVideo()
-//     .then(null);
+function showThings(){
+    console.log('showing');
+}
+playVideo()
+    .then(null);
 
 //endregion Play Video
 
@@ -198,6 +201,9 @@ function shouldIStayOrShouldIGo(technology) {
     //skills
     document.getElementById('Skills-container').classList.remove('d-none');
 
+    //contact
+    document.getElementById('Contact-section').classList.remove('d-none');
+
 
 
     // console.log('clicked')
@@ -249,29 +255,42 @@ document.addEventListener('scroll', ()=>{
 })
 //endregion navbar label
 
+//region Contact Section Management
+
+
+
+//endregion Contact Section Management
+
+
 
 //region sending contact info
 
 const btn = document.getElementById('Submit-button');
 
+
 document.getElementById('Contact-form')
     .addEventListener('submit', function(event) {
         event.preventDefault();
 
-        btn.value = 'Sending...';
+        btn.value = LANGUAGE_STATE.contactManager.sendButtonLabels.sending;
 
         const serviceID = 'default_service';
         const templateID = 'template_sccvwka';
 
         emailjs.sendForm(serviceID, templateID, this)
             .then(() => {
-                btn.value = 'Send Email';
-                alert('Sent!');
+              //success
+                document.getElementById('from_name').value= '';
+                document.getElementById('message').value= '';
+                document.getElementById('Submit-button').value=  LANGUAGE_STATE.contactManager.sendButtonLabels.send;
+
+
             }, (err) => {
-                btn.value = 'Send Email';
-                alert(JSON.stringify(err));
+                //fail
             });
     });
+//endregion sending contact info
+
 
 
 //region DOM functions

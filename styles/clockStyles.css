@@ -29,7 +29,8 @@
 
     position: relative;
     background-color: rgba(0, 0, 0, 0.75);
-    /*backdrop-filter: blur(20px);*/
+
+
 
     height: 100%;
     width: 100%;
@@ -106,8 +107,7 @@
 .analog-watch::after{
     content: '';
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.73);
-    backdrop-filter: blur(30px);
+    background-color: rgba(0, 0, 0, 1);
     z-index: 30;
     width: 10%;
     height: 10%;

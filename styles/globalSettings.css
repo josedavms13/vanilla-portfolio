@@ -1,9 +1,21 @@
 
 html{
     scroll-behavior: smooth;
+    background-color: #03183b;
 }
 
 
 button{
     border: white solid 1px;
+}
+
+body{
+    background-color: rgba(12, 2, 2, 0.42) !important;
+    /*box-sizing: border-box;*/
+    /*overflow: hidden;*/
+}
+
+section{
+    backdrop-filter: blur(20px);
+    width: 100%;
 }
