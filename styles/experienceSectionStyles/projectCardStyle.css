@@ -1,0 +1,38 @@
+.project-card{
+    text-align: center;
+
+    padding:  10%;
+
+
+}
+
+
+.project-card h6{
+    font-size: 1.5rem;
+}
+
+.project-card h3{
+    font-size: 1.3rem;
+    text-transform: capitalize;
+}
+
+.image-container{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.image-container img{
+
+
+    width: 70%;
+    border-radius: 10px;
+
+}
+
+.project-description{
+    margin-top: 20px;
+}
+

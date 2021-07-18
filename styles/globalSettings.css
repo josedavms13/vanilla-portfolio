@@ -19,3 +19,7 @@ section{
     backdrop-filter: blur(20px);
     width: 100%;
 }
+
+li{
+    list-style: none;
+}

@@ -1,0 +1,41 @@
+{
+  "practice-projects": [
+    {
+      "title" : "Pokedex",
+      "image": "https://d33wubrfki0l68.cloudfront.net/60bc00726deb9543316ad4c5/screenshot_2021-06-05-22-54-45-0000.png",
+      "description": {
+        "english" : "It is a pokedex that made in React. It has 3 different searching options (type, ability and name), with filters to help and guide the user on the search. Includes a register and login system.",
+        "spanish": "Es una pokedex hecha en React. Tiene 3 formas diferentes de búsqueda (tipo, habilidad y nombre), con filtros para ayudar y guiar al usuario en su búsqueda. Incluye un sistema de registro e ingreso."
+      },
+      "features": [
+        "React pagination", "Session (Register / Login)", "Routes", "Protected Routes", "API consuming, CSS animations"
+      ],
+      "technologies" : ["HTML, CSS, ReactJS"]
+    }
+    ,
+    {
+      "title" : "App Trivia",
+      "image": "https://d33wubrfki0l68.cloudfront.net/6091d47b1bf6df0008134a24/screenshot_2021-05-04-23-10-58-0000.png",
+      "description": {
+        "english" : "This is a Trivia game made in pure HTML, CSS and JavaScript. It has two game modes. The first one has 3 different difficulty levels, the player starts in lvl 1 (easy) and the level increase dependeing on how well answers the questions. The higher the level you are the more points you earn. Finally the score is saved on local storage. The second gamemode doesn't have score but you can filter the questions.",
+        "spanish": "Este es un juego de trivia hecho en HTML, CSS y JavaScript puro. Tiene dos modos de juego. El primero tiene 3 diferentes dificultades, el jugador comienza en nivel 1 (fácil) y va subiendo de nivel según vaya contestando las preguntas correctamente. Cuanto mayor sea el nivel del jugador mas puntos acumula. Finalmente el puntaje se guarda en el local storage. El segundo modo de juego no tiene puntage pero te permite filtrar las preguntas."
+      },
+      "features": [
+        "Original and Dynamic Music", "leveling system", "filtering system"
+      ],
+      "technologies" : ["HTML", "CSS", "JavasScript"]
+    },
+    {
+      "title" : "--",
+      "image": "--",
+      "description": {
+        "english" : "--",
+        "spanish": "--"
+      },
+      "features": [
+        "--"
+      ],
+      "technologies" : ["--"]
+    }
+  ]
+}

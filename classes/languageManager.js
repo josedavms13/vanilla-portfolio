@@ -18,7 +18,7 @@ export default class languageManager {
         this.navbatSections = this.setNavbarSections();
         this.reactInvitation = this.setReactInvitation();
 
-        this.experienceManager = new experienceSectionManager(this.language);
+        // this.experienceManager = new experienceSectionManager(this.language);
         this.skillsManager = new skillsSectionManager(this.language);
         this.contactManager = new contactSectionManager(this.language)
     }

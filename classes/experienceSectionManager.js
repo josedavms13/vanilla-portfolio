@@ -8,10 +8,10 @@ export default class experienceSectionManager {
     }
 
     setTittles() {
-        const tittlesContainer = document.getElementById('Projects-tittle');
-        const realProjectsTittles = document.getElementById('Real-projects-titles-container');
+        // const tittlesContainer = document.getElementById('Projects-tittle');
+        // const realProjectsTittles = document.getElementById('Real-projects-titles-container');
 
-        console.log(tittlesContainer);
+        // console.log(tittlesContainer);
 
         tittlesContainer.innerText = this.setSectionTittle();
         realProjectsTittles.innerHTML = this.setRealProjectsTittle();
@@ -54,7 +54,6 @@ export default class experienceSectionManager {
                         <h6>Aviso! :</h6>
                         <p class="disclaimer-p"> Estas son muestras demo de los proyectos reales. </p>
                         <p class="disclaimer-p">Algunos clientes no me permiten mostrar los proyectos que realice para ellos </p>
-                    
                     </div>
                 </div>
 `)
