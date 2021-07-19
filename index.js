@@ -282,6 +282,7 @@ document.getElementById('Contact-form')
               //success
                 document.getElementById('from_name').value= '';
                 document.getElementById('message').value= '';
+                document.getElementById('from_email').value = '';
                 document.getElementById('Submit-button').value=  LANGUAGE_STATE.contactManager.sendButtonLabels.send;
 
 

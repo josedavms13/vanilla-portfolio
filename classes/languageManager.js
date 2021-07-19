@@ -51,9 +51,9 @@ export default class languageManager {
                <a class="nav-link active" aria-current="page" href="#Welcome">Home</a>
             </li>
             <li class="nav-item"><a class="nav-link active" aria-current="page" href="#Real-projects-titles-container">Proyectos</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Habilidades</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#Skills-container">Habilidades</a></li>
             <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Hoja de vida / CV</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Contacto</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#Contact-section">Contacto</a></li>
             
             `
             // ------------- English ----------------------

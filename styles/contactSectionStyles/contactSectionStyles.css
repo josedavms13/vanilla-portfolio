@@ -81,3 +81,8 @@
     align-items: center;
     justify-content: center;
 }
+
+#message{
+    height: 200px;
+    overflow-wrap: break-word;
+}

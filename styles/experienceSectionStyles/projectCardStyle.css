@@ -29,6 +29,14 @@
 
     width: 70%;
     border-radius: 10px;
+    transition: all 1s ease;
+
+}
+.image-container img:hover{
+
+
+    width: 100vw;
+    border-radius: 10px;
 
 }
 

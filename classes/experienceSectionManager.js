@@ -82,17 +82,10 @@ export default class experienceSectionManager {
         let projectList = ``;
 
         this.practiceProjects.forEach((project)=>{
-            projectList += this.setProjectCard(project.title, project.image, project.description, project.features, project.technologies)
+            if(!project.template) {
+                projectList += this.setProjectCard(project.title, project.image, project.description, project.features, project.technologies)
+            }
         })
-        /*
-        let projectsSection = ``
-           //forEach Project = (project)=>{
-            projects += cardProjects(bla bla bla)
-
-           }
-
-        */
-
 
         document.getElementById('Project-cards-container').innerHTML = projectList;
     }
@@ -105,12 +98,15 @@ export default class experienceSectionManager {
         let featuresList = ``;
         let technologiesList = ``;
 
+        let description;
+
         console.log(cardTechnologies);
         console.log(Array.isArray(cardTechnologies.english));
         switch (this.language){
             case 'english':
                 featuresTitle = 'Features';
-                technologiesTitle = 'Technologies'
+                technologiesTitle = 'Technologies';
+                description = cardDescription.english
                 cardFeatures.english.forEach((feature)=>{
                     featuresList += `<li>${feature}</li>`
                 })
@@ -124,6 +120,7 @@ export default class experienceSectionManager {
                     featuresList += `<li>${feature}</li>`
                 })
 
+                description = cardDescription.spanish
 
                 console.log(technologiesList);
                 console.log(featuresList);
@@ -134,6 +131,8 @@ export default class experienceSectionManager {
         })
 
 
+        console.log(cardDescription);
+
         return `
             <div class="project-card">
                 <h3 class="project-title" id="Project-title">${cardTitle}</h3>
@@ -141,7 +140,7 @@ export default class experienceSectionManager {
                     <img src="${cardImage}" alt="">
                 </div>
                 <p class="project-description">
-                    ${cardDescription}
+                    ${description}
                 </p>
                 <div class="project-features" id="Project-features">
                     <h6 id="Features-title">${featuresTitle}</h6>
