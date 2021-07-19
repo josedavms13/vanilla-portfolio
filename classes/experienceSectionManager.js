@@ -1,23 +1,39 @@
 'use strict'
 
+import practiceProjects from "./components/practiceProjects.js";
+
 export default class experienceSectionManager {
 
     constructor(language) {
+
         this.language = language;
+        this.practiceProjects = practiceProjects;
         this.setTittles();
+        this.setPracticeProjects();
+
+
+        console.log(this.practiceProjects);
     }
 
     setTittles() {
-        // const tittlesContainer = document.getElementById('Projects-tittle');
-        // const realProjectsTittles = document.getElementById('Real-projects-titles-container');
+        const tittlesContainer = document.getElementById('Projects-tittle');
 
-        // console.log(tittlesContainer);
+        // region Real projects
+        // const realProjectsTittles = document.getElementById('Real-projects-titles-container');
+        // realProjectsTittles.innerHTML = this.setRealProjectsTittle();
+        // endregion Real projects
+
+        // region Practice Projects
+
+
+
+
+        // endregion Practice Projects
+
+        console.log(tittlesContainer);
 
         tittlesContainer.innerText = this.setSectionTittle();
-        realProjectsTittles.innerHTML = this.setRealProjectsTittle();
         console.log(this.language)
-        console.log(this.setRealProjectsTittle())
-
     }
 
     setSectionTittle(){
@@ -61,5 +77,86 @@ export default class experienceSectionManager {
         }
     }
 
+    setPracticeProjects(){
 
+        let projectList = ``;
+
+        this.practiceProjects.forEach((project)=>{
+            projectList += this.setProjectCard(project.title, project.image, project.description, project.features, project.technologies)
+        })
+        /*
+        let projectsSection = ``
+           //forEach Project = (project)=>{
+            projects += cardProjects(bla bla bla)
+
+           }
+
+        */
+
+
+        document.getElementById('Project-cards-container').innerHTML = projectList;
+    }
+
+
+    setProjectCard(cardTitle, cardImage, cardDescription, cardFeatures, cardTechnologies, cardLink, cardGitHub ){
+        let featuresTitle;
+        let technologiesTitle;
+
+        let featuresList = ``;
+        let technologiesList = ``;
+
+        console.log(cardTechnologies);
+        console.log(Array.isArray(cardTechnologies.english));
+        switch (this.language){
+            case 'english':
+                featuresTitle = 'Features';
+                technologiesTitle = 'Technologies'
+                cardFeatures.english.forEach((feature)=>{
+                    featuresList += `<li>${feature}</li>`
+                })
+                break
+
+            case 'spanish':
+                featuresTitle = 'Características';
+                technologiesTitle = 'Tecnologías';
+
+                cardFeatures.spanish.forEach((feature)=>{
+                    featuresList += `<li>${feature}</li>`
+                })
+
+
+                console.log(technologiesList);
+                console.log(featuresList);
+                break
+        }
+        cardTechnologies.forEach((technology)=>{
+            technologiesList += `<li>${technology}</li>`
+        })
+
+
+        return `
+            <div class="project-card">
+                <h3 class="project-title" id="Project-title">${cardTitle}</h3>
+                <div class="image-container">
+                    <img src="${cardImage}" alt="">
+                </div>
+                <p class="project-description">
+                    ${cardDescription}
+                </p>
+                <div class="project-features" id="Project-features">
+                    <h6 id="Features-title">${featuresTitle}</h6>
+                    <ul class="project-features-list">
+                        ${featuresList}
+                    </ul>
+                </div>
+
+                <div class="project-technologies" id="Project-Technologies">
+                    <h6 id="Technologies-title">${technologiesTitle}</h6>
+                    <ul class="project-technologies-list">
+                        ${technologiesList}
+                    </ul>
+                </div>
+            </div>               
+        `
+    }
 }
