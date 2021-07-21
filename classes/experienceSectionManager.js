@@ -83,7 +83,7 @@ export default class experienceSectionManager {
 
         this.practiceProjects.forEach((project)=>{
             if(!project.template) {
-                projectList += this.setProjectCard(project.title, project.image, project.description, project.features, project.technologies, project.links)
+                projectList += this.setProjectCard( project.id ,project.title, project.image, project.description, project.features, project.technologies, project.links)
             }
         })
 
@@ -91,7 +91,7 @@ export default class experienceSectionManager {
     }
 
 
-    setProjectCard(cardTitle, cardImage, cardDescription, cardFeatures, cardTechnologies, cardLinks){
+    setProjectCard(cardID, cardTitle, cardImage, cardDescription, cardFeatures, cardTechnologies, cardLinks){
         let featuresTitle;
         let technologiesTitle;
 
@@ -134,7 +134,7 @@ export default class experienceSectionManager {
         console.log(cardDescription);
 
         return `
-            <div class="project-card">
+            <div class="project-card" id="Practice${cardID}">
                 <h3 class="project-title" id="Project-title">${cardTitle}</h3>
                 <div class="image-container">
                     <a href="${cardLinks.webPage}" target="_blank">

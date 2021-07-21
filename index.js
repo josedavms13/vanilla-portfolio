@@ -2,6 +2,7 @@
 import languageManager from "./classes/languageManager.js";
 import setHtmlText from "./utilities/setHtmlText.js"
 import emailSubmit from "./services/emailSubmit.js";
+import pickRandomProjectOnSkill from "./utilities/pickRandomProjectOnSkill.js";
 
 //region GLOBAL VARIABLES
 let LANGUAGE_STATE;
@@ -45,7 +46,7 @@ const reactInvitation = document.getElementById("React-invitation-container");
 
 const sectionClassSection = document.querySelector('.section')
 
-//region language Management
+//region APP LANGUAGE MANAGEMENT
 function languageManagement(language) {
 
     LANGUAGE_STATE = new languageManager(language);
@@ -72,15 +73,10 @@ function languageManagement(language) {
     LANGUAGE_STATE.setWelcome()
 
 
-
-
-    //Experience section
-    // LANGUAGE_STATE.setExperienceTittles();
-
     //Set Navbar Label
     navbarLabel.innerText = LANGUAGE_STATE.navbatSections.home;
 
-    //Set Contact Labels
+
 
 
 
@@ -248,11 +244,11 @@ document.addEventListener('scroll', ()=>{
         console.log('experience');
     }
 
-    if(windowOffset > 3800){
+    if(windowOffset > 4800){
         navbarLabel.innerText = LANGUAGE_STATE.navbatSections.skills;
         console.log('experience');
     }
-    if(windowOffset > 5100){
+    if(windowOffset > 6100){
         navbarLabel.innerText = LANGUAGE_STATE.navbatSections.contact;
         console.log('experience');
     }
@@ -265,6 +261,36 @@ document.addEventListener('scroll', ()=>{
 
 
 //endregion Contact Section Management
+
+
+//region Skills Icons click Manager
+
+document.getElementById('Javascript-skill').addEventListener('click',()=>{
+    document.getElementById('Native-JS-link').setAttribute('href',`#${pickRandomProjectOnSkill('javaScript')}`)
+})
+
+document.getElementById('Html-skill').addEventListener('click',()=>{
+    document.getElementById('Html-link').setAttribute('href',`#${pickRandomProjectOnSkill('html')}`)
+})
+
+document.getElementById('Css-skill').addEventListener('click',()=>{
+    document.getElementById('CSS-link').setAttribute('href',`#${pickRandomProjectOnSkill('javaScript')}`)
+})
+
+document.getElementById('React-skill').addEventListener('click',()=>{
+    document.getElementById('React-link').setAttribute('href',`#${pickRandomProjectOnSkill('javaScript')}`)
+})
+
+document.getElementById('Redux-skill').addEventListener('click',()=>{
+    document.getElementById('Redux-link').setAttribute('href',`#${pickRandomProjectOnSkill('javaScript')}`)
+})
+
+
+
+
+
+
+//endregion Skills Icons click Manager
 
 
 

@@ -52,7 +52,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
 
+.skills-container a:link {
+    text-decoration: none;
+}
+
+.skills-container a:visited{
+    text-decoration: none;
+    color: white;
+}
+.skills-container a:active{
+    text-decoration: none;
+    color: white;
 }
 
 .icon-container{

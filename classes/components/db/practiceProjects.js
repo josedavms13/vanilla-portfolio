@@ -1,4 +1,5 @@
 const practiceProjects = [{
+    id: 0,
     title: "Pokedex",
     image: "https://d33wubrfki0l68.cloudfront.net/60bc00726deb9543316ad4c5/screenshot_2021-06-05-22-54-45-0000.png",
     description: {
@@ -15,6 +16,7 @@ const practiceProjects = [{
         webPage: 'https://condescending-kepler-3ca690.netlify.app'
     }
 }, {
+    id : 1,
     title: "App Trivia",
     image: "https://d33wubrfki0l68.cloudfront.net/6091d47b1bf6df0008134a24/screenshot_2021-05-04-23-10-58-0000.png",
     description: {
@@ -31,6 +33,7 @@ const practiceProjects = [{
         webPage: 'https://nostalgic-thompson-563f7b.netlify.app/'
     }
 }, {
+    id : 2,
     title: "Rick and Morty",
     image: "https://d33wubrfki0l68.cloudfront.net/60a5cf39cd7de77afd83c33a/screenshot_2021-05-20-02-54-58-0000.png",
     description: {
@@ -47,6 +50,7 @@ const practiceProjects = [{
         webPage: 'https://elated-davinci-c49982.netlify.app/'
     }
 }, {
+    id : 3,
     title: "Online TO-DO",
     image: "https://d33wubrfki0l68.cloudfront.net/60ad56fb9b7e5300071ab544/screenshot_2021-05-25-19-59-17-0000.png",
     description: {
@@ -64,6 +68,7 @@ const practiceProjects = [{
     }
 }, {
     template: true,
+    id : 1,
     title: "--",
     image: "--",
     description: {
