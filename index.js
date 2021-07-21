@@ -243,17 +243,22 @@ document.addEventListener('scroll', ()=>{
 
     }
 
-    if(windowOffset > 270){
+    if(windowOffset > 400){
         navbarLabel.innerText = LANGUAGE_STATE.navbatSections.experience;
         console.log('experience');
     }
 
-    if(windowOffset > 800){
+    if(windowOffset > 3800){
         navbarLabel.innerText = LANGUAGE_STATE.navbatSections.skills;
+        console.log('experience');
+    }
+    if(windowOffset > 5100){
+        navbarLabel.innerText = LANGUAGE_STATE.navbatSections.contact;
         console.log('experience');
     }
 })
 //endregion navbar label
+
 
 //region Contact Section Management
 

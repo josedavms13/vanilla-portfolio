@@ -1,6 +1,6 @@
 'use strict'
 
-import practiceProjects from "./components/practiceProjects.js";
+import practiceProjects from "./components/db/practiceProjects.js";
 
 export default class experienceSectionManager {
 
@@ -83,7 +83,7 @@ export default class experienceSectionManager {
 
         this.practiceProjects.forEach((project)=>{
             if(!project.template) {
-                projectList += this.setProjectCard(project.title, project.image, project.description, project.features, project.technologies)
+                projectList += this.setProjectCard(project.title, project.image, project.description, project.features, project.technologies, project.links)
             }
         })
 
@@ -91,7 +91,7 @@ export default class experienceSectionManager {
     }
 
 
-    setProjectCard(cardTitle, cardImage, cardDescription, cardFeatures, cardTechnologies, cardLink, cardGitHub ){
+    setProjectCard(cardTitle, cardImage, cardDescription, cardFeatures, cardTechnologies, cardLinks){
         let featuresTitle;
         let technologiesTitle;
 
@@ -137,23 +137,39 @@ export default class experienceSectionManager {
             <div class="project-card">
                 <h3 class="project-title" id="Project-title">${cardTitle}</h3>
                 <div class="image-container">
-                    <img src="${cardImage}" alt="">
+                    <a href="${cardLinks.webPage}" target="_blank">
+                        <img src="${cardImage}" alt="card_image">
+                    </a>
                 </div>
+                
                 <p class="project-description">
                     ${description}
                 </p>
-                <div class="project-features" id="Project-features">
-                    <h6 id="Features-title">${featuresTitle}</h6>
-                    <ul class="project-features-list">
-                        ${featuresList}
-                    </ul>
+                <div class="features-and-tech-container">
+                    <div class="project-features group-container-characteristics" id="Project-features">
+                        <h6 id="Features-title">${featuresTitle}</h6>
+                        <div class="project-features-list">
+                            ${featuresList}
+                        </div>
+                    </div>
+                    <div class="project-technologies" id="Project-Technologies">
+                        <h6 id="Technologies-title">${technologiesTitle}</h6>
+                        <div class="project-technologies-list">
+                            ${technologiesList}
+                        </div>
+                    </div>
                 </div>
-
-                <div class="project-technologies" id="Project-Technologies">
-                    <h6 id="Technologies-title">${technologiesTitle}</h6>
-                    <ul class="project-technologies-list">
-                        ${technologiesList}
-                    </ul>
+                <div class="links">
+                    <div class="gitHub-link link-container">
+                        <a href="${cardLinks.gitHub}" target="_blank">
+                            <i class="fab fa-github" ></i>
+                        </a>
+                    </div>                    
+                    <div class="webpage-link link-container">
+                        <a href="${cardLinks.webPage}" target="_blank" >
+                            <i class="fas fa-link"></i>
+                        </a>
+                    </div>
                 </div>
             </div>               
         `

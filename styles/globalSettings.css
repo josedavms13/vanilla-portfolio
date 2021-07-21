@@ -20,6 +20,12 @@ section{
     width: 100%;
 }
 
+
+ul{
+    text-align: left;
+}
+
+
 li{
     list-style: none;
 }

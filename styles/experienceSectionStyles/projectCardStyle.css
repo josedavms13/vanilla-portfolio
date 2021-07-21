@@ -8,7 +8,9 @@
 
 
 .project-card h6{
-    font-size: 1.5rem;
+    font-size: 2rem;
+    border-bottom: black solid;
+    padding-bottom: 10px;
 }
 
 .project-card h3{
@@ -35,12 +37,40 @@
 .image-container img:hover{
 
 
-    width: 100vw;
-    border-radius: 10px;
+    width: 90%;
+    border-radius: 0;
 
 }
 
 .project-description{
     margin-top: 20px;
+    padding: 10%;
 }
 
+.group-container-characteristics{
+
+    margin: 10px;
+}
+
+.features-and-tech-container{
+    margin-top: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.links{
+
+    /*background-color: red;*/
+    display: flex;
+    justify-content: center;
+}
+
+.link-container{
+    /*background-color: #0074D9;*/
+    margin: 10px;
+    font-size: 2rem;
+}
