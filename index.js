@@ -286,12 +286,7 @@ document.getElementById('Redux-skill').addEventListener('click',()=>{
 })
 
 
-
-
-
-
 //endregion Skills Icons click Manager
-
 
 
 //region sending contact info
@@ -322,7 +317,6 @@ document.getElementById('Contact-form')
             });
     });
 //endregion sending contact info
-
 
 
 //region DOM functions

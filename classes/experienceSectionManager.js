@@ -81,6 +81,16 @@ export default class experienceSectionManager {
 
         let projectList = ``;
 
+        switch(this.language){
+            case 'english':
+                document.getElementById('Practice-projects-title').innerText = 'Practice Projects';
+                break
+            case 'spanish':
+                document.getElementById('Practice-projects-title').innerText = 'Proyectos de práctica';
+                break
+        }
+
+
         this.practiceProjects.forEach((project)=>{
             if(!project.template) {
                 projectList += this.setProjectCard( project.id ,project.title, project.image, project.description, project.features, project.technologies, project.links)
