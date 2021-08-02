@@ -2,7 +2,9 @@
 import languageManager from "./classes/languageManager.js";
 import setHtmlText from "./utilities/setHtmlText.js"
 import emailSubmit from "./services/emailSubmit.js";
+
 import pickRandomProjectOnSkill from "./utilities/pickRandomProjectOnSkill.js";
+import unIdleServer from "./services/unIdleServer";
 
 //region GLOBAL VARIABLES
 let LANGUAGE_STATE;
@@ -46,10 +48,16 @@ const reactInvitation = document.getElementById("React-invitation-container");
 
 const sectionClassSection = document.querySelector('.section')
 
+
 //region APP LANGUAGE MANAGEMENT
 function languageManagement(language) {
 
+
     LANGUAGE_STATE = new languageManager(language);
+
+    unIdleServer().then(
+        res=>res.status
+    )
 
     //region show and hide
     document.querySelector('header').classList.remove('d-none');
@@ -65,6 +73,9 @@ function languageManagement(language) {
 
     //Invitation to React Portfolio
     setHtmlText('React-invitation-container', LANGUAGE_STATE.reactInvitation);
+
+    shouldIStayOrShouldIGo('vanilla');
+
 
     //Navigation container
     setHtmlText('Nav-list-container', LANGUAGE_STATE.navbar);
