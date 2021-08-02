@@ -1,9 +1,9 @@
-import axios from "axios";
 
 function unIdleServer(){
 
-    const url = 'https://murmuring-scrubland-15375.herokuapp.com/api/get-opinion';
+    const baseUrl = 'https://murmuring-scrubland-15375.herokuapp.com/';
 
-    return axios.get(url)
+    return fetch(baseUrl)
+
 }
 export default unIdleServer

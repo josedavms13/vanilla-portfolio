@@ -18,6 +18,7 @@ body{
 section{
     backdrop-filter: blur(20px);
     width: 100%;
+    padding: 10%;
 }
 
 

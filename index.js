@@ -1,14 +1,16 @@
 'use strict'
-import languageManager from "./classes/languageManager.js";
+import languageManager from "./classes/LanguageManager.js";
 import setHtmlText from "./utilities/setHtmlText.js"
 import emailSubmit from "./services/emailSubmit.js";
 
 import pickRandomProjectOnSkill from "./utilities/pickRandomProjectOnSkill.js";
-import unIdleServer from "./services/unIdleServer";
+import unIdleServer from "./services/unIdleServer.js";
+import getOpinions from "./services/getOpinions.js";
+import setComments from "./modules/setComments.js";
 
 //region GLOBAL VARIABLES
 let LANGUAGE_STATE;
-
+let SERVER_RESPONDED;
 
 //endregion global variables
 
@@ -19,8 +21,8 @@ let LANGUAGE_STATE;
 const spanishButton = document.getElementById('Spanish-button');
 const englishButton = document.getElementById('English-button');
 
-spanishButton.addEventListener('click', () => languageManagement('spanish'))
-englishButton.addEventListener('click', () => languageManagement('english'))
+spanishButton.addEventListener('click', () => reloadServerBeforeLanguage('spanish'))
+englishButton.addEventListener('click', () => reloadServerBeforeLanguage('english'))
 //endregion language picker
 
 //region Input Fields
@@ -46,18 +48,32 @@ reactButton.addEventListener('Vanilla-button', () => shouldIStayOrShouldIGo('van
 const languageSelection = document.getElementById("Language-selection");
 const reactInvitation = document.getElementById("React-invitation-container");
 
+const commentSection = document.getElementById("Opinion-section");
+const commentAsking = document.getElementById("Comment-asking");
+const commentPostContainer = document.getElementById('Opinion-post-container');
+
 const sectionClassSection = document.querySelector('.section')
 
 
 //region APP LANGUAGE MANAGEMENT
+
+
+function reloadServerBeforeLanguage(language){
+    unIdleServer()
+        .then(res=> {
+            if(res.status===200){
+                SERVER_RESPONDED = true;
+            }
+            languageManagement(language);
+        })
+        .catch(()=>{
+            SERVER_RESPONDED = false;
+            languageManagement(language);
+        })
+}
+
+
 function languageManagement(language) {
-
-
-    LANGUAGE_STATE = new languageManager(language);
-
-    unIdleServer().then(
-        res=>res.status
-    )
 
     //region show and hide
     document.querySelector('header').classList.remove('d-none');
@@ -65,17 +81,21 @@ function languageManagement(language) {
     // Display react options
     languageSelection.classList.add('d-none');
     reactInvitation.classList.remove('d-none');
-    
+
+
+
+
 
     //endregion show and hide
+
+    LANGUAGE_STATE = new languageManager(language);
+
+
 
     
 
     //Invitation to React Portfolio
     setHtmlText('React-invitation-container', LANGUAGE_STATE.reactInvitation);
-
-    shouldIStayOrShouldIGo('vanilla');
-
 
     //Navigation container
     setHtmlText('Nav-list-container', LANGUAGE_STATE.navbar);
@@ -83,13 +103,18 @@ function languageManagement(language) {
     //welcome
     LANGUAGE_STATE.setWelcome()
 
-
     //Set Navbar Label
     navbarLabel.innerText = LANGUAGE_STATE.navbatSections.home;
 
+    //Set Comment section
+    commentAsking.innerHTML = LANGUAGE_STATE.setCommentSection().question;
+    document.getElementById('Comments-title').innerText = LANGUAGE_STATE.setCommentSection().title;
 
 
 
+    //region REACT PORTFOLIO BYPASS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    // shouldIStayOrShouldIGo('vanilla');
+    //endregion REACT PORTFOLIO BYPASS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 }
 
@@ -205,15 +230,16 @@ function shouldIStayOrShouldIGo(technology) {
     document.getElementById('Welcome').classList.remove('d-none');
 
 
-    //skills
+    //Display skills section
     document.getElementById('Skills-container').classList.remove('d-none');
 
-    //contact
+    //Display contact section
     document.getElementById('Contact-section').classList.remove('d-none');
 
+    // Display comments section
+    commentSection.classList.remove('d-none');
 
 
-    // console.log('clicked')
 
     sectionClassSection.classList.remove('d-none');
 
@@ -266,6 +292,40 @@ document.addEventListener('scroll', ()=>{
 })
 //endregion navbar label
 
+
+//region Comments section
+
+function askAndShowComments(){
+
+    console.log('showing comments');
+
+
+
+    getOpinions()
+        .then(res=> res.json())
+        .then(data=> {
+            showComments(data)
+        });
+
+
+
+}
+
+function showComments(data){
+
+    //Hide comment question
+    commentAsking.classList.add('d-none');
+
+    //Generate comments cards
+    setComments(data, LANGUAGE_STATE.setCommentSection().labels);
+
+    //Show posted comments
+    commentPostContainer.classList.remove('d-none')
+    console.log(data)
+}
+
+
+//endregion Comments section
 
 //region Contact Section Management
 
@@ -332,5 +392,7 @@ document.getElementById('Contact-form')
 
 //region DOM functions
 window.shouldIStayOrShouldIGo = shouldIStayOrShouldIGo;
+
+window.showComments = askAndShowComments;
 // window
 //endregion DOM functions

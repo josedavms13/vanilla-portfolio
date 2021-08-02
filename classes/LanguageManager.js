@@ -1,7 +1,7 @@
 'use strict'
-import experienceSectionManager from "./experienceSectionManager.js";
-import skillsSectionManager from "./skillsSectionManager.js";
-import contactSectionManager from "./contactSectionManager.js";
+import experienceSectionManager from "./ExperienceSectionManager.js";
+import skillsSectionManager from "./SkillsSectionManager.js";
+import contactSectionManager from "./ContactSectionManager.js";
 
 export default class languageManager {
 
@@ -124,6 +124,52 @@ export default class languageManager {
         }
     }
 
+    setCommentSection(){
+
+        switch (this.language){
+
+            case 'english':
+                return {
+                    title: 'Comments',
+                    question :
+                        `
+                        <h2>Do you want to see some comments from people who know me?</h2>
+                        <div class="yes-no-question">
+                            <button type="button" class="btn btn-primary" onclick="showComments()">Yes please!</button>
+                        </div>
+                        `,
+                    labels : {
+                        author : 'Name',
+                        position : 'Actual Position',
+                        relation : 'Relationship with me',
+                        country : 'Country',
+                        comment : 'Comment',
+                        rate: 'Rate'
+                    }
+        }
+
+            case 'spanish':
+                return {
+                    title: 'Comentarios',
+                    question :
+                        `
+                        <h2>¿Quieres ver algunos comentarios de la gente que me conoce?</h2>
+                        <div class="yes-no-question">
+                            <button type="button" class="btn btn-primary" onclick="showComments()">Vale!</button>
+                        </div>
+                        `,
+                    labels : {
+                        author : 'Nombre',
+                        position : 'Posición Actual',
+                        relation : 'Relacion con respecto a mi',
+                        country : 'País',
+                        comment : 'Comentario',
+                        rate: 'Evaluación'
+                    }
+        }
+                }
+
+    }
 
 
 }

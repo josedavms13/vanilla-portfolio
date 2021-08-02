@@ -16,6 +16,7 @@ class skillsSectionManager{
         //Explanation
 
         document.getElementById('Main-skills-explanation'). innerText = this.setExplanations().mainSkills;
+        document.getElementById('Secondary-skills-explanation').innerText = this.setExplanations().secondarySkills;
 
     }
 
