@@ -1,5 +1,34 @@
 .spinner-container{
     position: absolute;
     z-index: 9999999;
-    --spiner-loader-size: 60vw;
+    --spiner-loader-size: 80vw;
+    background-color: #194046;
+
+    border-radius: 20px;
+    border: #aeedfa solid 1px;
+
+    height: 70vh;
+    width: var(--spiner-loader-size);
+
+    top: 20vh;
+    left: calc((100vw - var(--spiner-loader-size))/2);
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.spinner {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.spinner h6{
+    margin-top: 5%;
+    color : white;
 }

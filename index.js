@@ -39,6 +39,9 @@ vanillaButton.addEventListener('Vanilla-button', () => shouldIStayOrShouldIGo('v
 
 //endregion event Listeners
 
+const spinnerLoaderClassList = document.getElementById('Spinner-loader').classList;
+const messageSendingResults = document.getElementById('Message-sending-response');
+
 const languageSelection = document.getElementById("Language-selection");
 const reactInvitation = document.getElementById("React-invitation-container");
 
@@ -53,15 +56,20 @@ const sectionClassSection = document.querySelector('.section')
 
 
 function reloadServerBeforeLanguage(language){
+
+    spinnerLoaderClassList.remove('d-none');
+
     unIdleServer()
         .then(res=> {
             if(res.status===200){
                 SERVER_RESPONDED = true;
+                spinnerLoaderClassList.add('d-none');
             }
             languageManagement(language);
         })
         .catch(()=>{
             SERVER_RESPONDED = false;
+            spinnerLoaderClassList.add('d-none');
             languageManagement(language);
         })
 }
@@ -312,7 +320,6 @@ function showComments(data){
 
     //Generate comments cards
     const commentSectionCard = setComments(data, LANGUAGE_STATE.setCommentSection().labels);
-    // setComments(data, LANGUAGE_STATE.setCommentSection().labels);
 
     //Show posted comments
 
@@ -364,6 +371,7 @@ const btn = document.getElementById('Submit-button');
 
 document.getElementById('Contact-form')
     .addEventListener('submit', function(event) {
+        spinnerLoaderClassList.remove('d-none');
         event.preventDefault();
 
         btn.value = LANGUAGE_STATE.contactManager.sendButtonLabels.sending;
@@ -371,7 +379,10 @@ document.getElementById('Contact-form')
         const serviceID = 'default_service';
         const templateID = 'template_sccvwka';
 
-        emailjs.sendForm(serviceID, templateID, this)
+        const messageContainer = document.getElementById('Message-sending-response-titles-container');
+
+
+            emailjs.sendForm(serviceID, templateID, this)
             .then(() => {
               //success
                 document.getElementById('from_name').value= '';
@@ -379,11 +390,33 @@ document.getElementById('Contact-form')
                 document.getElementById('from_email').value = '';
                 document.getElementById('Submit-button').value=  LANGUAGE_STATE.contactManager.sendButtonLabels.send;
 
+                spinnerLoaderClassList.add('d-none');
 
-            }, (err) => {
-                //fail
-            });
+                messageContainer.innerHTML = LANGUAGE_STATE.contactManager.setMessageResponse('success');
+                messageResult();
+
+                console.log('message sent')
+            })
+                .catch((err) => {
+                    //fail
+                    messageContainer.innerHTML = LANGUAGE_STATE.contactManager.setMessageResponse('fail');
+                    spinnerLoaderClassList.add('d-none');
+                    messageResult();
+
+                });
     });
+
+
+function messageResult(){
+    messageSendingResults.classList.remove('d-none');
+    setTimeout(()=>{
+        messageSendingResults.classList.add('d-none');
+    },1300)
+
+
+}
+
+
 //endregion sending contact info
 
 

@@ -1,0 +1,33 @@
+.message-sending-response{
+
+    z-index: 999999;
+
+    position: absolute;
+
+
+    min-height: 50vh;
+    --message-sending-response-width : 80vw;
+    max-width: var(--message-sending-response-width);
+
+    top: 30vh;
+    left: calc((100vw - var(--message-sending-response-width))/2);
+
+
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px;
+
+    border-radius: 20px;
+    border: #001f38 solid 2px;
+}
+
+.message-successful{
+    background-color: #17b4b7;
+}
+.message-fail{
+    background-color: #17b4b7;
+}

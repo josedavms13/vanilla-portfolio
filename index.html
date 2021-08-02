@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="./styles/sectionsStyles.css">
     <link rel="stylesheet" href="./styles/globalSettings.css">
 
+    <link rel="stylesheet" href="./styles/spinner-loader.css">
+    <link rel="stylesheet" href="./styles/contactSectionStyles/messageResponseStyles.css">
+
     <link rel="stylesheet" href="./styles/welcome/welcomeStyles.css">
     <link rel="stylesheet" href="./styles/skillsSectionStyles/skills.css">
     <link rel="stylesheet" href="./styles/experienceSectionStyles/generalExperienseSection.css">
@@ -32,7 +35,6 @@
 <body>
 
 <header class="header d-none">
-
 
     <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg navbar-collapse">
         <div class="container-fluid">
@@ -69,15 +71,27 @@
 
 </header>
 
-
+<!--COMPONENTS ******************-->
 <video id="Background-video" src="./media/videoding.mp4" autoplay></video>
 
-<div class="spinner-container d-none">
+<div class="spinner-container d-none" id="Spinner-loader">
 
-    <div class="spinner-border text-warning" role="status">
-        <span class="visually-hidden">Loading...</span>
+    <div class="spinner">
+        <div class="spinner-border text-warning" role="status">
+            <span class="visually-hidden"></span>
+        </div>
+        <h6>Loading...</h6>
     </div>
 </div>
+
+<div class="message-sending-response d-none" id="Message-sending-response">
+    <div id="Message-sending-response-titles-container">
+        <h1>Message sent successfully!</h1>
+        <h2>Thank you very much!</h2>
+    </div>
+
+</div>
+
 
 <div class="video-cover"></div>
 
@@ -153,7 +167,6 @@
 </section>
 
 <!-- COMMENT SECTION =======================================-->
-
 <section class="opinion-container section d-none" id="Opinion-section">
     <div class="comment-asking" id="Comment-asking">
         <h2>Do you want to see some comments from people who know me? // Quieres ver algunos comentarios de la gente que me conoce?</h2>
@@ -248,7 +261,7 @@
 
 
 
-<!-- SKILLS SECTION======================================-->
+<!-- SKILLS SECTION ======================================-->
 <section class="skills-container d-none" id="Skills-container">
     <h1 id="Skills-tittle">Skills</h1>
     <div class="main-skills">
@@ -330,6 +343,8 @@
 
 </section>
 
+
+<!--CONTACT SECTION ==========================================-->
 <section class="contact-section section d-none" id="Contact-section">
     <div class="contact-me-tittle">
         <h1 id="Contact-me-tittle">Contact me!/ Contactame</h1>
@@ -346,7 +361,7 @@
             </div>
             <div class="field">
                 <label for="message" id="Message-field_form">message</label>
-                <input required type="text" name="message" id="message">
+                <textarea required name="message" id="message"></textarea>
             </div>
 
 

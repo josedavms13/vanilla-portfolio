@@ -6,8 +6,6 @@ class contactSectionManager{
         this.confirmationMessages = this.setLabels().sentConfirmation;
         this.sendButtonLabels = this.setLabels().sendButton;
         this.setContactSection();
-
-
     }
 
     setContactSection(){
@@ -16,7 +14,6 @@ class contactSectionManager{
         document.getElementById('Name-field_form').innerText = this.setLabels().nameField;
         document.getElementById('Message-field_form').innerText = this.setLabels().messageField;
         document.getElementById('Submit-button').value = this.setLabels().sendButton.send;
-
     }
 
     setContactSectionTitle(){
@@ -63,18 +60,50 @@ class contactSectionManager{
                         sendConfirmationMessage : 'Gracias por contactarme. Te responderé prontamente.'
                     }
                 }
-
-
         }
-
     }
 
+    setMessageResponse(response){
+        switch (this.language){
 
+            case 'english':
+                if(response === 'successful'){
+                    return`
+                    
+                    <div id="Message-sending-response-titles-container message-successful">
+                        <h1>Message sent successfully!</h1>
+                        <h2>Thank you very much!</h2>
+                    </div>
+               `
+                }else {
+                    return `
+                    <div id="Message-sending-response-titles-container message-fail">
+                        <h1>Message couldn't be send</h1>
+                        <h2>So sorry!</h2>
+                    </div>
+               `
+                }
+                case 'spanish':
+                if(response === 'successful'){
+                    return`
+                    
+                    <div id="Message-sending-response-titles-container message-successful">
+                        <h1>Mensaje enviado satisfactoriamente!</h1>
+                        <h2>Muchísimas Gracias!</h2>
+                    </div>
+               `
+                }else {
+                    return `
+                    <div id="Message-sending-response-titles-container message-fail">
+                        <h1>El mensaje no se pudo enviar</h1>
+                        <h2>Lo siento muchísimo!</h2>
+                    </div>
+               `
+                }
 
-
-
-
-
+            
+        }
+}
 }
 
 
