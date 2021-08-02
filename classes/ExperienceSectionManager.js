@@ -132,8 +132,7 @@ export default class experienceSectionManager {
 
                 description = cardDescription.spanish
 
-                console.log(technologiesList);
-                console.log(featuresList);
+
                 break
         }
         cardTechnologies.forEach((technology)=>{
@@ -141,7 +140,7 @@ export default class experienceSectionManager {
         })
 
 
-        console.log(cardDescription);
+
 
         return `
             <div class="project-card" id="Practice${cardID}">

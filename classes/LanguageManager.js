@@ -141,7 +141,7 @@ export default class languageManager {
                     labels : {
                         author : 'Name',
                         position : 'Actual Position',
-                        relation : 'Relationship with me',
+                        relation : 'Relationship',
                         country : 'Country',
                         comment : 'Comment',
                         rate: 'Rate'
@@ -161,7 +161,7 @@ export default class languageManager {
                     labels : {
                         author : 'Nombre',
                         position : 'Posición Actual',
-                        relation : 'Relacion con respecto a mi',
+                        relation : 'Relacion',
                         country : 'País',
                         comment : 'Comentario',
                         rate: 'Evaluación'

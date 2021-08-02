@@ -1,7 +1,6 @@
 'use strict'
 import languageManager from "./classes/LanguageManager.js";
 import setHtmlText from "./utilities/setHtmlText.js"
-import emailSubmit from "./services/emailSubmit.js";
 
 import pickRandomProjectOnSkill from "./utilities/pickRandomProjectOnSkill.js";
 import unIdleServer from "./services/unIdleServer.js";
@@ -25,11 +24,6 @@ spanishButton.addEventListener('click', () => reloadServerBeforeLanguage('spanis
 englishButton.addEventListener('click', () => reloadServerBeforeLanguage('english'))
 //endregion language picker
 
-//region Input Fields
-const userNameInputField = document.getElementById('Name-field');
-
-
-//endregion Input Fields
 
 
 //region react invitation
@@ -38,7 +32,7 @@ const reactButton = document.getElementById('React-button');
 reactButton.addEventListener('React-button', () => shouldIStayOrShouldIGo('react'));
 
 const vanillaButton = document.getElementById('Vanilla-button');
-reactButton.addEventListener('Vanilla-button', () => shouldIStayOrShouldIGo('vanilla'));
+vanillaButton.addEventListener('Vanilla-button', () => shouldIStayOrShouldIGo('vanilla'));
 
 //endregion react invitation
 
@@ -317,10 +311,13 @@ function showComments(data){
     commentAsking.classList.add('d-none');
 
     //Generate comments cards
-    setComments(data, LANGUAGE_STATE.setCommentSection().labels);
+    const commentSectionCard = setComments(data, LANGUAGE_STATE.setCommentSection().labels);
+    // setComments(data, LANGUAGE_STATE.setCommentSection().labels);
 
     //Show posted comments
+
     commentPostContainer.classList.remove('d-none')
+    document.getElementById('All-post-dynamic-container').innerHTML = commentSectionCard
     console.log(data)
 }
 
