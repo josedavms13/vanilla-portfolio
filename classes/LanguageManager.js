@@ -80,6 +80,7 @@ export default class languageManager {
                     home: 'Home',
                     experience : 'Experience',
                     skills : 'Skills',
+                    comments: 'Comments',
                     contact : 'Contact'
                 }
 
@@ -88,6 +89,7 @@ export default class languageManager {
                     home: 'Inicio',
                     experience: 'Experiencia',
                     skills: 'Habilidades',
+                    comments: 'Comentarios',
                     contact: 'Contacto'
                 }
         }
@@ -135,7 +137,7 @@ export default class languageManager {
                         `
                         <h2>Do you want to see some comments from people who know me?</h2>
                         <div class="yes-no-question">
-                            <button type="button" class="btn btn-primary" onclick="showComments()">Yes please!</button>
+                            <button type="button" class="btn btn-primary" onclick="askAndShowComments()">Yes please!</button>
                         </div>
                         `,
                     labels : {
@@ -155,7 +157,7 @@ export default class languageManager {
                         `
                         <h2>¿Quieres ver algunos comentarios de la gente que me conoce?</h2>
                         <div class="yes-no-question">
-                            <button type="button" class="btn btn-primary" onclick="showComments()">Vale!</button>
+                            <button type="button" class="btn btn-primary" onclick="askAndShowComments()">Vale!</button>
                         </div>
                         `,
                     labels : {

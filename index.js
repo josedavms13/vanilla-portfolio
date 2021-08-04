@@ -25,7 +25,6 @@ englishButton.addEventListener('click', () => reloadServerBeforeLanguage('englis
 //endregion language picker
 
 
-
 //region react invitation
 
 const reactButton = document.getElementById('React-button');
@@ -39,15 +38,26 @@ vanillaButton.addEventListener('Vanilla-button', () => shouldIStayOrShouldIGo('v
 
 //endregion event Listeners
 
+
+const welcomeSection = document.getElementById('Welcome');
+
 const spinnerLoaderClassList = document.getElementById('Spinner-loader').classList;
 const messageSendingResults = document.getElementById('Message-sending-response');
 
 const languageSelection = document.getElementById("Language-selection");
 const reactInvitation = document.getElementById("React-invitation-container");
 
+const experienceSection = document.getElementById('Experience-container');
+
 const commentSection = document.getElementById("Opinion-section");
 const commentAsking = document.getElementById("Comment-asking");
 const commentPostContainer = document.getElementById('Opinion-post-container');
+
+
+const skillsSection = document.getElementById('Skills-container')
+
+const contactSection = document.getElementById('Contact-section');
+
 
 const sectionClassSection = document.querySelector('.section')
 
@@ -55,22 +65,19 @@ const sectionClassSection = document.querySelector('.section')
 //region APP LANGUAGE MANAGEMENT
 
 
-function reloadServerBeforeLanguage(language){
+function reloadServerBeforeLanguage(language) {
 
-    spinnerLoaderClassList.remove('d-none');
+    languageManagement(language);
 
     unIdleServer()
-        .then(res=> {
-            if(res.status===200){
+        .then(res => {
+            if (res.status === 200) {
                 SERVER_RESPONDED = true;
-                spinnerLoaderClassList.add('d-none');
+                commentSection.classList.remove('d-none')
             }
-            languageManagement(language);
         })
-        .catch(()=>{
+        .catch(() => {
             SERVER_RESPONDED = false;
-            spinnerLoaderClassList.add('d-none');
-            languageManagement(language);
         })
 }
 
@@ -85,16 +92,10 @@ function languageManagement(language) {
     reactInvitation.classList.remove('d-none');
 
 
-
-
-
     //endregion show and hide
 
     LANGUAGE_STATE = new languageManager(language);
 
-
-
-    
 
     //Invitation to React Portfolio
     setHtmlText('React-invitation-container', LANGUAGE_STATE.reactInvitation);
@@ -110,14 +111,18 @@ function languageManagement(language) {
 
     //Set Comment section
     commentAsking.innerHTML = LANGUAGE_STATE.setCommentSection().question;
-    document.getElementById('Comments-title').innerText = LANGUAGE_STATE.setCommentSection().title;
 
+    //Show comment section
+    if (SERVER_RESPONDED) {
+        document.getElementById('Comments-title').innerText = LANGUAGE_STATE.setCommentSection().title;
+    }
 
 
     //region REACT PORTFOLIO BYPASS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    // shouldIStayOrShouldIGo('vanilla');
+    shouldIStayOrShouldIGo('vanilla');
     //endregion REACT PORTFOLIO BYPASS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+    setOffsetsAfterDocumentGenerated();
 }
 
 
@@ -126,26 +131,16 @@ function languageManagement(language) {
 
 //region Play Video
 const video = document.getElementById('Background-video');
-video.addEventListener('canplay', playVideo);
+video.addEventListener('canplay', (e) => isReadyToPlay(e));
 
-async function playVideo(){
-    try{
-        await setTimeout(()=>{
-            video.play();
-            console.log('playing video')
-            },5000);
-        await showThings();
+function isReadyToPlay(e) {
+    console.log('ready to play');
+    console.log('event => ', e);
 
-    }catch {
-        await playVideo();
-    }
+    video.play();
 
 }
-function showThings(){
-    console.log('showing');
-}
-playVideo()
-    .then(null);
+
 
 //endregion Play Video
 
@@ -217,8 +212,8 @@ hoverInTL.to('#Clock', {
         opacity: 1,
         duration: 0.5,
 
-    }, '.analog-watch .hand.second',{
-        opacity : 1,
+    }, '.analog-watch .hand.second', {
+        opacity: 1,
     })
 
 clock.addEventListener('click', clockAmp)
@@ -228,19 +223,15 @@ clock.addEventListener('click', clockAmp)
 //region React invitation
 function shouldIStayOrShouldIGo(technology) {
 
-    document.getElementById('Experience-container').classList.remove('d-none');
-    document.getElementById('Welcome').classList.remove('d-none');
+    experienceSection.classList.remove('d-none');
+    welcomeSection.classList.remove('d-none');
 
 
     //Display skills section
-    document.getElementById('Skills-container').classList.remove('d-none');
+    skillsSection.classList.remove('d-none');
 
     //Display contact section
-    document.getElementById('Contact-section').classList.remove('d-none');
-
-    // Display comments section
-    commentSection.classList.remove('d-none');
-
+    contactSection.classList.remove('d-none');
 
 
     sectionClassSection.classList.remove('d-none');
@@ -261,35 +252,75 @@ function shouldIStayOrShouldIGo(technology) {
             break
     }
 }
+
 //endregion react invitation
 
 
 //region Navbar label
+
+let skillsPosition;
+let contactPosition;
+
+function setOffsetsAfterDocumentGenerated() {
+
+    const navbarHeight = 60
+
+    skillsPosition = skillsSection.offsetTop + navbarHeight;
+    contactPosition = contactSection.offsetTop + navbarHeight;
+
+    console.log('skillsSection ', skillsPosition)
+    console.log('contactPosition ', contactPosition)
+}
+
+
 const navbarLabel = document.getElementById('Navbar-label');
 
 let windowOffset;
-document.addEventListener('scroll', ()=>{
-    windowOffset= window.pageYOffset;
+document.addEventListener('scroll', () => {
+
+    windowOffset = window.pageYOffset;
     console.log(windowOffset);
 
-    if(windowOffset < 270){
+    if (windowOffset < 270) {
         navbarLabel.innerText = LANGUAGE_STATE.navbatSections.home;
         console.log('home');
 
     }
 
-    if(windowOffset > 400){
+    if (windowOffset > 400) {
         navbarLabel.innerText = LANGUAGE_STATE.navbatSections.experience;
         console.log('experience');
     }
 
-    if(windowOffset > 4800){
-        navbarLabel.innerText = LANGUAGE_STATE.navbatSections.skills;
-        console.log('experience');
-    }
-    if(windowOffset > 6100){
-        navbarLabel.innerText = LANGUAGE_STATE.navbatSections.contact;
-        console.log('experience');
+
+    if(windowOffset > 4380 && SERVER_RESPONDED){
+
+        if(windowOffset > 4468){
+            navbarLabel.innerText = LANGUAGE_STATE.navbatSections.comments;
+            console.log('comments');
+        }
+
+        if (windowOffset > skillsPosition) {
+            navbarLabel.innerText = LANGUAGE_STATE.navbatSections.skills;
+            console.log('contact');
+        }
+
+        if (windowOffset > contactPosition) {
+            navbarLabel.innerText = LANGUAGE_STATE.navbatSections.contact;
+            console.log('contact');
+        }
+
+    }else {
+        if (windowOffset > 4800) {
+            navbarLabel.innerText = LANGUAGE_STATE.navbatSections.comments;
+            console.log('skills');
+        }
+
+
+        if (windowOffset > 6100) {
+            navbarLabel.innerText = LANGUAGE_STATE.navbatSections.contact;
+            console.log('contact');
+        }
     }
 })
 //endregion navbar label
@@ -297,23 +328,22 @@ document.addEventListener('scroll', ()=>{
 
 //region Comments section
 
-function askAndShowComments(){
+function askAndShowComments() {
 
     console.log('showing comments');
 
 
-
     getOpinions()
-        .then(res=> res.json())
-        .then(data=> {
+        .then(res => res.json())
+        .then(data => {
             showComments(data)
         });
 
 
-
+    setOffsetsAfterDocumentGenerated();
 }
 
-function showComments(data){
+function showComments(data) {
 
     //Hide comment question
     commentAsking.classList.add('d-none');
@@ -331,8 +361,8 @@ function showComments(data){
 
 //endregion Comments section
 
-//region Contact Section Management
 
+//region Contact Section Management
 
 
 //endregion Contact Section Management
@@ -340,24 +370,24 @@ function showComments(data){
 
 //region Skills Icons click Manager
 
-document.getElementById('Javascript-skill').addEventListener('click',()=>{
-    document.getElementById('Native-JS-link').setAttribute('href',`#${pickRandomProjectOnSkill('javaScript')}`)
+document.getElementById('Javascript-skill').addEventListener('click', () => {
+    document.getElementById('Native-JS-link').setAttribute('href', `#${pickRandomProjectOnSkill('javaScript')}`)
 })
 
-document.getElementById('Html-skill').addEventListener('click',()=>{
-    document.getElementById('Html-link').setAttribute('href',`#${pickRandomProjectOnSkill('html')}`)
+document.getElementById('Html-skill').addEventListener('click', () => {
+    document.getElementById('Html-link').setAttribute('href', `#${pickRandomProjectOnSkill('html')}`)
 })
 
-document.getElementById('Css-skill').addEventListener('click',()=>{
-    document.getElementById('CSS-link').setAttribute('href',`#${pickRandomProjectOnSkill('javaScript')}`)
+document.getElementById('Css-skill').addEventListener('click', () => {
+    document.getElementById('CSS-link').setAttribute('href', `#${pickRandomProjectOnSkill('javaScript')}`)
 })
 
-document.getElementById('React-skill').addEventListener('click',()=>{
-    document.getElementById('React-link').setAttribute('href',`#${pickRandomProjectOnSkill('javaScript')}`)
+document.getElementById('React-skill').addEventListener('click', () => {
+    document.getElementById('React-link').setAttribute('href', `#${pickRandomProjectOnSkill('javaScript')}`)
 })
 
-document.getElementById('Redux-skill').addEventListener('click',()=>{
-    document.getElementById('Redux-link').setAttribute('href',`#${pickRandomProjectOnSkill('javaScript')}`)
+document.getElementById('Redux-skill').addEventListener('click', () => {
+    document.getElementById('Redux-link').setAttribute('href', `#${pickRandomProjectOnSkill('javaScript')}`)
 })
 
 
@@ -370,7 +400,7 @@ const btn = document.getElementById('Submit-button');
 
 
 document.getElementById('Contact-form')
-    .addEventListener('submit', function(event) {
+    .addEventListener('submit', function (event) {
         spinnerLoaderClassList.remove('d-none');
         event.preventDefault();
 
@@ -382,13 +412,13 @@ document.getElementById('Contact-form')
         const messageContainer = document.getElementById('Message-sending-response-titles-container');
 
 
-            emailjs.sendForm(serviceID, templateID, this)
+        emailjs.sendForm(serviceID, templateID, this)
             .then(() => {
-              //success
-                document.getElementById('from_name').value= '';
-                document.getElementById('message').value= '';
+                //success
+                document.getElementById('from_name').value = '';
+                document.getElementById('message').value = '';
                 document.getElementById('from_email').value = '';
-                document.getElementById('Submit-button').value=  LANGUAGE_STATE.contactManager.sendButtonLabels.send;
+                document.getElementById('Submit-button').value = LANGUAGE_STATE.contactManager.sendButtonLabels.send;
 
                 spinnerLoaderClassList.add('d-none');
 
@@ -397,21 +427,21 @@ document.getElementById('Contact-form')
 
                 console.log('message sent')
             })
-                .catch((err) => {
-                    //fail
-                    messageContainer.innerHTML = LANGUAGE_STATE.contactManager.setMessageResponse('fail');
-                    spinnerLoaderClassList.add('d-none');
-                    messageResult();
+            .catch((err) => {
+                //fail
+                messageContainer.innerHTML = LANGUAGE_STATE.contactManager.setMessageResponse('fail');
+                spinnerLoaderClassList.add('d-none');
+                messageResult();
 
-                });
+            });
     });
 
 
-function messageResult(){
+function messageResult() {
     messageSendingResults.classList.remove('d-none');
-    setTimeout(()=>{
+    setTimeout(() => {
         messageSendingResults.classList.add('d-none');
-    },1300)
+    }, 1300)
 
 
 }
@@ -423,6 +453,6 @@ function messageResult(){
 //region DOM functions
 window.shouldIStayOrShouldIGo = shouldIStayOrShouldIGo;
 
-window.showComments = askAndShowComments;
+window.askAndShowComments = askAndShowComments;
 // window
 //endregion DOM functions
