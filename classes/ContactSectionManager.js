@@ -14,6 +14,7 @@ class contactSectionManager{
         document.getElementById('Name-field_form').innerText = this.setLabels().nameField;
         document.getElementById('Message-field_form').innerText = this.setLabels().messageField;
         document.getElementById('Submit-button').value = this.setLabels().sendButton.send;
+        document.getElementById('Download-cv-title').innerText = this.setLabels().downloadCV;
     }
 
     setContactSectionTitle(){
@@ -45,7 +46,8 @@ class contactSectionManager{
                     sentConfirmation: {
                         sendConfirmationLabel : 'Message sent successfully',
                         sendConfirmationMessage : 'Thanks for contacting me. I will reply soon'
-                    }
+                    },
+                    downloadCV : 'Download CV',
                 }
                 case 'spanish':
                 return {
@@ -58,7 +60,8 @@ class contactSectionManager{
                     sentConfirmation: {
                         sendConfirmationLabel : 'Tu mensaje se ha enviado correctamente',
                         sendConfirmationMessage : 'Gracias por contactarme. Te responderé prontamente.'
-                    }
+                    },
+                    downloadCV : 'Descargar hoja de vida',
                 }
         }
     }

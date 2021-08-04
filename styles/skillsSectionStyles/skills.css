@@ -22,10 +22,7 @@
     transition: all 0.3s ease;
 }
 
-.main-skills-container i:hover{
-    color: yellow;
-    cursor: pointer;
-}
+
 
 .main-skills-tittle{
     display: flex;
@@ -54,18 +51,6 @@
     align-items: center;
 }
 
-.skills-container a:link {
-    text-decoration: none;
-}
-
-.skills-container a:visited{
-    text-decoration: none;
-    color: white;
-}
-.skills-container a:active{
-    text-decoration: none;
-    color: white;
-}
 
 .icon-container{
     display: flex;
@@ -81,3 +66,36 @@
 .skill-box{
     margin: 10px;
 }
+
+
+.redux-skill{
+    margin-top: 20px;
+}
+#Javascript-skill i:hover{
+    color: #EFD81D;
+    cursor: pointer;
+}
+
+#React-skill i:hover{
+    color: #5ED3F3;
+    cursor: pointer;
+}
+
+
+#Css-skill i:hover{
+    color: #31A4D5;
+    cursor: pointer;
+}
+
+#Html-skill i:hover{
+    color: #DD4B25;
+    cursor: pointer;
+}
+
+
+
+/*.main-skills-container i:hover{*/
+/*    color: yellow;*/
+/*    cursor: pointer;*/
+/*}*/
+

@@ -14,7 +14,7 @@ let SERVER_RESPONDED;
 //endregion global variables
 
 
-//region EVENT LISTENERS
+//region Welcome section  event listeners
 
 //region language picker
 const spanishButton = document.getElementById('Spanish-button');
@@ -39,10 +39,14 @@ vanillaButton.addEventListener('Vanilla-button', () => shouldIStayOrShouldIGo('v
 //endregion event Listeners
 
 
-const welcomeSection = document.getElementById('Welcome');
+//region Document Elements
 
+//Independent Components
 const spinnerLoaderClassList = document.getElementById('Spinner-loader').classList;
 const messageSendingResults = document.getElementById('Message-sending-response');
+
+//Sections
+const welcomeSection = document.getElementById('Welcome');
 
 const languageSelection = document.getElementById("Language-selection");
 const reactInvitation = document.getElementById("React-invitation-container");
@@ -60,6 +64,9 @@ const contactSection = document.getElementById('Contact-section');
 
 
 const sectionClassSection = document.querySelector('.section')
+const downloadCVButton = document.getElementById('Download-cv')
+
+//endregion Document Elements
 
 
 //region APP LANGUAGE MANAGEMENT
@@ -403,13 +410,17 @@ document.getElementById('Redux-skill').addEventListener('click', () => {
 //endregion Skills Icons click Manager
 
 
-//region sending contact info
+//region Contact Section
 
+//region sending contact info
 const btn = document.getElementById('Submit-button');
 
 
 document.getElementById('Contact-form')
     .addEventListener('submit', function (event) {
+        messageContainer.innerHTML = LANGUAGE_STATE.contactManager.setMessageResponse('success');
+        messageResult();
+
         spinnerLoaderClassList.remove('d-none');
         event.preventDefault();
 
@@ -440,10 +451,12 @@ document.getElementById('Contact-form')
                 //fail
                 messageContainer.innerHTML = LANGUAGE_STATE.contactManager.setMessageResponse('fail');
                 spinnerLoaderClassList.add('d-none');
-                messageResult();
+
 
             });
     });
+
+//endregion sending contact info
 
 
 function messageResult() {
@@ -452,11 +465,16 @@ function messageResult() {
         messageSendingResults.classList.add('d-none');
     }, 1300)
 
-
 }
 
+//Download CV
+const filePath = './media/documents/'
+downloadCVButton.addEventListener('click', ()=>{
 
-//endregion sending contact info
+})
+
+
+//endregion contact section
 
 
 //region DOM functions
