@@ -15,7 +15,7 @@ export default class languageManager {
             spanish: ``
         }
         this.navbar = this.setNavbar();
-        this.navbatSections = this.setNavbarSections();
+        this.navbarSections = this.setNavbarSections();
         this.reactInvitation = this.setReactInvitation();
 
         this.experienceManager = new experienceSectionManager(this.language);

@@ -107,7 +107,7 @@ function languageManagement(language) {
     LANGUAGE_STATE.setWelcome()
 
     //Set Navbar Label
-    navbarLabel.innerText = LANGUAGE_STATE.navbatSections.home;
+    navbarLabel.innerText = LANGUAGE_STATE.navbarSections.home;
 
     //Set Comment section
     commentAsking.innerHTML = LANGUAGE_STATE.setCommentSection().question;
@@ -259,17 +259,24 @@ function shouldIStayOrShouldIGo(technology) {
 //region Navbar label
 
 let skillsPosition;
+let commentPosition;
 let contactPosition;
+
+const homePosition = 298;
+const experiencePosition = 394;
 
 function setOffsetsAfterDocumentGenerated() {
 
-    const navbarHeight = 60
+    const navbarHeight = 400;
+
 
     skillsPosition = skillsSection.offsetTop + navbarHeight;
     contactPosition = contactSection.offsetTop + navbarHeight;
+    commentPosition = 4411;
 
     console.log('skillsSection ', skillsPosition)
     console.log('contactPosition ', contactPosition)
+    console.log('commentPosition ', commentPosition)
 }
 
 
@@ -281,47 +288,49 @@ document.addEventListener('scroll', () => {
     windowOffset = window.pageYOffset;
     console.log(windowOffset);
 
-    if (windowOffset < 270) {
-        navbarLabel.innerText = LANGUAGE_STATE.navbatSections.home;
-        console.log('home');
+   switch (true){
 
-    }
-
-    if (windowOffset > 400) {
-        navbarLabel.innerText = LANGUAGE_STATE.navbatSections.experience;
-        console.log('experience');
-    }
+       case windowOffset < homePosition:
+           console.log('home');
+           navbarLabel.innerText = LANGUAGE_STATE.navbarSections.home;
 
 
-    if(windowOffset > 4380 && SERVER_RESPONDED){
+           break
 
-        if(windowOffset > 4468){
-            navbarLabel.innerText = LANGUAGE_STATE.navbatSections.comments;
-            console.log('comments');
-        }
+       case windowOffset > experiencePosition && windowOffset < commentPosition:
 
-        if (windowOffset > skillsPosition) {
-            navbarLabel.innerText = LANGUAGE_STATE.navbatSections.skills;
-            console.log('contact');
-        }
+           navbarLabel.innerText = LANGUAGE_STATE.navbarSections.experience;
+           console.log('experience');
+           break
 
-        if (windowOffset > contactPosition) {
-            navbarLabel.innerText = LANGUAGE_STATE.navbatSections.contact;
-            console.log('contact');
-        }
+       case SERVER_RESPONDED && windowOffset > commentPosition && windowOffset < skillsPosition:
 
-    }else {
-        if (windowOffset > 4800) {
-            navbarLabel.innerText = LANGUAGE_STATE.navbatSections.comments;
-            console.log('skills');
-        }
+           console.log('Comments')
+           navbarLabel.innerText = LANGUAGE_STATE.navbarSections.comments;
+
+           break
+
+       case windowOffset > skillsPosition && windowOffset < contactPosition:
+
+           navbarLabel.innerText = LANGUAGE_STATE.navbarSections.skills;
+           console.log('Skills');
+
+           break
+
+       case windowOffset > contactPosition:
+
+           navbarLabel.innerText = LANGUAGE_STATE.navbarSections.contact;
+           console.log('Contact')
+
+           break
 
 
-        if (windowOffset > 6100) {
-            navbarLabel.innerText = LANGUAGE_STATE.navbatSections.contact;
-            console.log('contact');
-        }
-    }
+
+
+   }
+
+
+
 })
 //endregion navbar label
 
