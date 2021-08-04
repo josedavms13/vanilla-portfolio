@@ -64,7 +64,6 @@ const contactSection = document.getElementById('Contact-section');
 
 
 const sectionClassSection = document.querySelector('.section')
-const downloadCVButton = document.getElementById('Download-cv')
 
 //endregion Document Elements
 
@@ -154,7 +153,7 @@ function isReadyToPlay(e) {
 
 //region Clock functions
 
-const clockFunction = setInterval(setClock, 1000)
+setInterval(setClock, 1000)
 
 const secondHand = document.querySelector('[data-second-hand]')
 const minuteHand = document.querySelector('[data-minute-hand]')
@@ -415,7 +414,7 @@ document.getElementById('Redux-skill').addEventListener('click', () => {
 //region sending contact info
 const btn = document.getElementById('Submit-button');
 
-
+const messageContainer = document.getElementById('Message-sending-response-titles-container');
 document.getElementById('Contact-form')
     .addEventListener('submit', function (event) {
         messageContainer.innerHTML = LANGUAGE_STATE.contactManager.setMessageResponse('success');
@@ -429,7 +428,7 @@ document.getElementById('Contact-form')
         const serviceID = 'default_service';
         const templateID = 'template_sccvwka';
 
-        const messageContainer = document.getElementById('Message-sending-response-titles-container');
+
 
 
         emailjs.sendForm(serviceID, templateID, this)
@@ -447,7 +446,7 @@ document.getElementById('Contact-form')
 
                 console.log('message sent')
             })
-            .catch((err) => {
+            .catch(() => {
                 //fail
                 messageContainer.innerHTML = LANGUAGE_STATE.contactManager.setMessageResponse('fail');
                 spinnerLoaderClassList.add('d-none');
@@ -467,11 +466,6 @@ function messageResult() {
 
 }
 
-//Download CV
-const filePath = './media/documents/'
-downloadCVButton.addEventListener('click', ()=>{
-
-})
 
 
 //endregion contact section
