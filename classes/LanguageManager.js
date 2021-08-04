@@ -50,9 +50,9 @@ export default class languageManager {
             <li class="nav-item">
                <a class="nav-link active" aria-current="page" href="#Welcome">Home</a>
             </li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#Real-projects-titles-container">Proyectos</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#Experience-container">Proyectos</a></li>
             <li class="nav-item"><a class="nav-link active" aria-current="page" href="#Skills-container">Habilidades</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Hoja de vida / CV</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#Contact-section">Hoja de vida / CV</a></li>
             <li class="nav-item"><a class="nav-link active" aria-current="page" href="#Contact-section">Contacto</a></li>
             
             `
@@ -63,10 +63,10 @@ export default class languageManager {
             <li class="nav-item">
                <a class="nav-link active" aria-current="page" href="/">Home</a>
             </li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Projects</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Skills</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">CV</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Contact</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#Experience-container">Projects</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="##Skills-container">Skills</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#Contact-section">CV</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#Contact-section">Contact</a></li>
             
             `
 
