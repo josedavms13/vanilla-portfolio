@@ -273,7 +273,7 @@ const experiencePosition = 394;
 
 function setOffsetsAfterDocumentGenerated() {
 
-    const navbarHeight = 400;
+    const navbarHeight = 450;
 
 
     skillsPosition = skillsSection.offsetTop + navbarHeight;
@@ -364,12 +364,12 @@ function showComments(data) {
     commentAsking.classList.add('d-none');
 
     //Generate comments cards
-    const commentSectionCard = setComments(data, LANGUAGE_STATE.setCommentSection().labels);
+    const commentCardInfo = setComments(data, LANGUAGE_STATE.setCommentSection().labels);
+    console.log(commentCardInfo);
 
     //Show posted comments
-
     commentPostContainer.classList.remove('d-none')
-    document.getElementById('All-post-dynamic-container').innerHTML = commentSectionCard
+    document.getElementById('All-post-dynamic-container').innerHTML = commentCardInfo
     console.log(data)
 }
 
@@ -394,15 +394,15 @@ document.getElementById('Html-skill').addEventListener('click', () => {
 })
 
 document.getElementById('Css-skill').addEventListener('click', () => {
-    document.getElementById('CSS-link').setAttribute('href', `#${pickRandomProjectOnSkill('javaScript')}`)
+    document.getElementById('CSS-link').setAttribute('href', `#${pickRandomProjectOnSkill('css')}`)
 })
 
 document.getElementById('React-skill').addEventListener('click', () => {
-    document.getElementById('React-link').setAttribute('href', `#${pickRandomProjectOnSkill('javaScript')}`)
+    document.getElementById('React-link').setAttribute('href', `#${pickRandomProjectOnSkill('react')}`)
 })
 
 document.getElementById('Redux-skill').addEventListener('click', () => {
-    document.getElementById('Redux-link').setAttribute('href', `#${pickRandomProjectOnSkill('javaScript')}`)
+    document.getElementById('Redux-link').setAttribute('href', `#${pickRandomProjectOnSkill('redux')}`)
 })
 
 

@@ -1,4 +1,3 @@
-import nameUpperCasing from "../utilities/nameUpperCasing.js";
 
 function setComments(data, labels){
 
@@ -13,18 +12,18 @@ function setComments(data, labels){
             `
             <div class="opinion-post-card">
                 <div class="comment-title">
-                    <h4>${nameUpperCasing(post.author)}</h4>
+                    <h4>${(post.author)}</h4>
                 </div>
                 <div class="comment-info-segment">
 
                     <div class="position card-info-container">
                         <div class="item-tittle">${labels.position}:</div>
-                        <div class="item-content">${nameUpperCasing(post.position)}</div>
+                        <div class="item-content">${(post.position)}</div>
                     </div>
 
                     <div class="relation card-info-container">
                         <div class="item-tittle">${labels.relation}:</div>
-                        <div class="item-content">${nameUpperCasing(post.relation)}</div>
+                        <div class="item-content">${(post.relation)}</div>
                     </div>
 
                     <div class="country card-info-container">

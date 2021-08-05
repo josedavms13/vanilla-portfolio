@@ -3,10 +3,10 @@ class skillsSectionManager{
     constructor(language) {
         this.language = language;
 
-        this.setSkills();
+        this.setSkillsTitles();
     }
 
-    setSkills(){
+    setSkillsTitles(){
 
         //Tittles
         document.getElementById('Skills-tittle').innerText = this.setTittles().mainTittle;

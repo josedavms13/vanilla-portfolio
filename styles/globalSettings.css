@@ -1,6 +1,9 @@
 
-html{
+*{
     scroll-behavior: smooth;
+
+}
+html{
     background-color: #03183b;
 }
 

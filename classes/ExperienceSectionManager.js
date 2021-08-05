@@ -144,7 +144,9 @@ export default class experienceSectionManager {
 
         return `
             <div class="project-card" id="Practice${cardID}">
-                <h3 class="project-title" id="Project-title">${cardTitle}</h3>
+                <div class="project-tittle-container">
+                    <h3 class="project-title" id="Project-title">${cardTitle}</h3>
+                </div>
                 <div class="image-container">
                     <a href="${cardLinks.webPage}" target="_blank">
                         <img src="${cardImage}" alt="card_image">
@@ -155,13 +157,13 @@ export default class experienceSectionManager {
                     ${description}
                 </p>
                 <div class="features-and-tech-container">
-                    <div class="project-features group-container-characteristics" id="Project-features">
+                    <div class="project-features group-container-characteristics card-explanation-block" id="Project-features">
                         <h6 id="Features-title">${featuresTitle}</h6>
                         <div class="project-features-list">
                             ${featuresList}
                         </div>
                     </div>
-                    <div class="project-technologies" id="Project-Technologies">
+                    <div class="project-technologies card-explanation-block" id="Project-Technologies">
                         <h6 id="Technologies-title">${technologiesTitle}</h6>
                         <div class="project-technologies-list">
                             ${technologiesList}

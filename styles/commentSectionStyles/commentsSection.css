@@ -57,5 +57,10 @@
     padding-bottom: 5px;
 }
 .item-tittle{
-    max-width: 40%;
+    max-width: 50%;
+    padding: 10px;
+}
+.item-content{
+    max-width: 50%;
+    padding: 10px;
 }
