@@ -9,12 +9,12 @@ class contactSectionManager{
     }
 
     setContactSection(){
-        document.getElementById('Contact-me-tittle').innerText = this.setContactSectionTitle();
-
-        document.getElementById('Name-field_form').innerText = this.setLabels().nameField;
-        document.getElementById('Message-field_form').innerText = this.setLabels().messageField;
-        document.getElementById('Submit-button').value = this.setLabels().sendButton.send;
-        document.getElementById('Download-cv-title').innerText = this.setLabels().downloadCV;
+        // document.getElementById('Contact-me-tittle').innerText = this.setContactSectionTitle();
+        //
+        // document.getElementById('Name-field_form').innerText = this.setLabels().nameField;
+        // document.getElementById('Message-field_form').innerText = this.setLabels().messageField;
+        // document.getElementById('Submit-button').value = this.setLabels().sendButton.send;
+        // document.getElementById('Download-cv-title').innerText = this.setLabels().downloadCV;
     }
 
     setContactSectionTitle(){
