@@ -116,7 +116,7 @@ function languageManagement(language) {
     navbarLabel.innerText = LANGUAGE_STATE.navbarSections.home;
 
     //Set Comment section
-    // commentAsking.innerHTML = LANGUAGE_STATE.setCommentSection().question;
+    commentAsking.innerHTML = LANGUAGE_STATE.setCommentSection().question;
 
     //Show comment section
     if (SERVER_RESPONDED) {
@@ -237,7 +237,7 @@ function shouldIStayOrShouldIGo(technology) {
     skillsSection.classList.remove('d-none');
 
     //Display contact section
-    // contactSection.classList.remove('d-none');
+    contactSection.classList.remove('d-none');
 
 
     sectionClassSection.classList.remove('d-none');
