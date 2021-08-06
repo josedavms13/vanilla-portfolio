@@ -156,16 +156,17 @@ export default class experienceSectionManager {
                 <p class="project-description">
                     ${description}
                 </p>
+                
                 <div class="features-and-tech-container">
-                    <div class="project-features group-container-characteristics card-explanation-block" id="Project-features">
+                    <div class="project-features card-explanation-block" id="Project-features">
                         <h6 id="Features-title">${featuresTitle}</h6>
-                        <div class="project-features-list">
+                        <div class="project-features-list experience-list">
                             ${featuresList}
                         </div>
                     </div>
                     <div class="project-technologies card-explanation-block" id="Project-Technologies">
                         <h6 id="Technologies-title">${technologiesTitle}</h6>
-                        <div class="project-technologies-list">
+                        <div class="project-technologies-list experience-list">
                             ${technologiesList}
                         </div>
                     </div>

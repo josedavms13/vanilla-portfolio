@@ -1,0 +1,36 @@
+@media (min-width: 600px) {
+
+    .project-card{
+        /*background-color: red;*/
+        padding-bottom: 30px;
+        border-bottom: #7f7f7f solid 1px;
+    }
+    .features-and-tech-container{
+        flex-direction: row;
+        align-items: flex-start;
+
+        /*background-color: #0074D9;*/
+        border: #9d9d9d solid 1px;
+
+        padding : 20px;
+    }
+    .card-explanation-block{
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        /*background-color: red;*/
+
+        width: 50%;
+        height: 100%;
+    }
+
+    .experience-list{
+        /*background-color: lime;*/
+        width: 100%;
+    }
+
+
+}
