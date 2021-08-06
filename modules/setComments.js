@@ -25,11 +25,6 @@ function setComments(data, labels){
                         <div class="item-tittle">${labels.relation}:</div>
                         <div class="item-content">${(post.relation)}</div>
                     </div>
-
-                    <div class="country card-info-container">
-                        <div class="item-tittle">${labels.relation}:</div>
-                        <div class="item-content">Test</div>
-                    </div>
                 </div>
         
                 <div class="comment">
