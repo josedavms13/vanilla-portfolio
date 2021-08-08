@@ -27,4 +27,12 @@
     text-align: justify-all;
 }
 
+.social-networks{
+    font-size: 2.3rem;
+}
+
+.social-networks a{
+    color: white;
+}
+
 
