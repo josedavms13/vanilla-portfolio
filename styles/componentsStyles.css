@@ -75,7 +75,7 @@ video{
 }
 
 .language-selection button{
-    width: 30%;
+    min-width: 30%;
     margin: 3px;
     border: #3F92A3 solid 2px;
     background: #0C2B88;

@@ -1,0 +1,60 @@
+@media (min-width: 1000px) {
+    .project-card{
+        padding: 5%;
+    }
+
+    .description-features-container{
+        display: flex;
+        width: 60%;
+
+        min-height: 30vh;
+
+        margin: 25px auto;
+
+        border: #8d8d8d solid 1px;
+        border-radius: 20px;
+
+        background-color: rgba(194, 194, 194, 0.68);
+
+
+    }
+    .project-description-container{
+
+        width: 50%;
+        border-right: #8d8d8d solid 1px;
+
+
+    }
+
+    .project-description{
+        padding: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 80%;
+    }
+
+    .features-and-tech-container{
+        width: 50%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        border: none;
+    }
+
+    .project-tittle-container h3{
+        font-size: 3rem;
+    }
+
+    .clock-container{
+        margin: 0 40px;
+    }
+    #Navbar-label{
+        color: #8f8f8f;
+        font-size: 1.5rem;
+        margin: 0 30px;
+
+    }
+}
+
