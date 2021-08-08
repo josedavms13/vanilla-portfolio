@@ -2,8 +2,6 @@
     text-align: center;
     background-color: rgba(4, 4, 5, 0.79);
 
-    backdrop-filter: blur(13px);
-    text-align: center;
     padding: 50px;
     margin-top: 9vh;
 
@@ -29,7 +27,12 @@
     text-align: justify-all;
 }
 
-
-.experience-container h2{
-    text-align: center;
+.social-networks{
+    font-size: 2.3rem;
 }
+
+.social-networks a{
+    color: white;
+}
+
+

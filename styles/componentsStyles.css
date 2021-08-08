@@ -13,7 +13,7 @@
     border-bottom: rgba(255, 255, 255, 0.55) solid 1px;
     box-shadow: white 0 0.1px 4px  ;
     opacity: 0.98;
-    /*backdrop-filter: blur(5px);*/
+
 }
 
 
@@ -59,7 +59,8 @@ video{
     text-align: center;
 
     background: rgba(12, 22, 42, 0.6);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(5px);
+
     color: #BDBEB6;
 
     position: absolute;
@@ -74,7 +75,7 @@ video{
 }
 
 .language-selection button{
-    width: 30%;
+    min-width: 30%;
     margin: 3px;
     border: #3F92A3 solid 2px;
     background: #0C2B88;
@@ -113,6 +114,7 @@ video{
     border-bottom: rgba(255, 255, 255, 0) solid 1px;
     transition: all 0.5s;
     user-select: none;
+
 }
 
 #React-invitation-container h4:hover{

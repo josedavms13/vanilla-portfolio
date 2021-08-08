@@ -23,15 +23,6 @@ export default class experienceSectionManager {
         // realProjectsTittles.innerHTML = this.setRealProjectsTittle();
         // endregion Real projects
 
-        // region Practice Projects
-
-
-
-
-        // endregion Practice Projects
-
-        console.log(tittlesContainer);
-
         tittlesContainer.innerText = this.setSectionTittle();
         console.log(this.language)
     }
@@ -104,6 +95,7 @@ export default class experienceSectionManager {
     setProjectCard(cardID, cardTitle, cardImage, cardDescription, cardFeatures, cardTechnologies, cardLinks){
         let featuresTitle;
         let technologiesTitle;
+        let descriptionTitle;
 
         let featuresList = ``;
         let technologiesList = ``;
@@ -116,6 +108,8 @@ export default class experienceSectionManager {
             case 'english':
                 featuresTitle = 'Features';
                 technologiesTitle = 'Technologies';
+                descriptionTitle = 'Description';
+
                 description = cardDescription.english
                 cardFeatures.english.forEach((feature)=>{
                     featuresList += `<li>${feature}</li>`
@@ -125,14 +119,12 @@ export default class experienceSectionManager {
             case 'spanish':
                 featuresTitle = 'Características';
                 technologiesTitle = 'Tecnologías';
+                descriptionTitle = 'Descripción';
 
+                description = cardDescription.spanish
                 cardFeatures.spanish.forEach((feature)=>{
                     featuresList += `<li>${feature}</li>`
                 })
-
-                description = cardDescription.spanish
-
-
                 break
         }
         cardTechnologies.forEach((technology)=>{
@@ -152,21 +144,26 @@ export default class experienceSectionManager {
                         <img src="${cardImage}" alt="card_image">
                     </a>
                 </div>
-                
-                <p class="project-description">
-                    ${description}
-                </p>
-                <div class="features-and-tech-container">
-                    <div class="project-features group-container-characteristics card-explanation-block" id="Project-features">
-                        <h6 id="Features-title">${featuresTitle}</h6>
-                        <div class="project-features-list">
-                            ${featuresList}
-                        </div>
+                <div class="description-features-container">
+                    <div class="project-description-container">
+                        <h6 id="Project-description-title">${descriptionTitle}</h6>
+                        <p class="project-description">
+                            ${description}
+                        </p>
                     </div>
-                    <div class="project-technologies card-explanation-block" id="Project-Technologies">
-                        <h6 id="Technologies-title">${technologiesTitle}</h6>
-                        <div class="project-technologies-list">
-                            ${technologiesList}
+                    
+                    <div class="features-and-tech-container">
+                        <div class="project-features card-explanation-block" id="Project-features">
+                            <h6 id="Features-title">${featuresTitle}</h6>
+                            <div class="project-features-list experience-list">
+                                ${featuresList}
+                            </div>
+                        </div>
+                        <div class="project-technologies card-explanation-block" id="Project-Technologies">
+                            <h6 id="Technologies-title">${technologiesTitle}</h6>
+                            <div class="project-technologies-list experience-list">
+                                ${technologiesList}
+                            </div>
                         </div>
                     </div>
                 </div>

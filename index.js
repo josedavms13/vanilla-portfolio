@@ -80,6 +80,7 @@ function reloadServerBeforeLanguage(language) {
             if (res.status === 200) {
                 SERVER_RESPONDED = true;
                 commentSection.classList.remove('d-none')
+                setSectionsYPosition();
             }
         })
         .catch(() => {
@@ -128,7 +129,7 @@ function languageManagement(language) {
     shouldIStayOrShouldIGo('vanilla');
     //endregion REACT PORTFOLIO BYPASS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-    setOffsetsAfterDocumentGenerated();
+    setSectionsYPosition();
 }
 
 
@@ -264,25 +265,27 @@ function shouldIStayOrShouldIGo(technology) {
 
 //region Navbar label
 
+const homePosition = 298;
+const experiencePosition = 394;
+
 let skillsPosition;
 let commentPosition;
 let contactPosition;
 
-const homePosition = 298;
-const experiencePosition = 394;
+function setSectionsYPosition() {
 
-function setOffsetsAfterDocumentGenerated() {
-
-    const navbarHeight = 450;
+    const yOffset = -150;
 
 
-    skillsPosition = skillsSection.offsetTop + navbarHeight;
-    contactPosition = contactSection.offsetTop + navbarHeight;
-    commentPosition = 4411;
 
+    commentPosition = commentSection.offsetTop + yOffset;
+    skillsPosition = skillsSection.offsetTop + yOffset;
+    contactPosition = contactSection.offsetTop + yOffset;
+
+    console.log('commentPosition ', commentPosition)
     console.log('skillsSection ', skillsPosition)
     console.log('contactPosition ', contactPosition)
-    console.log('commentPosition ', commentPosition)
+    console.log('POSITION SET ----------------------')
 }
 
 
@@ -351,11 +354,12 @@ function askAndShowComments() {
     getOpinions()
         .then(res => res.json())
         .then(data => {
-            showComments(data)
+            showComments(data);
+            setSectionsYPosition();
         });
 
 
-    setOffsetsAfterDocumentGenerated();
+
 }
 
 function showComments(data) {

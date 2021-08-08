@@ -6,6 +6,9 @@
     margin-top: 30px;
 }
 
+.experience-container h2{
+    text-align: center;
+}
 
 .projects-tittle-h2{
     font-weight: bold;
@@ -21,7 +24,6 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-
 }
 .real-projects-title h2{
     margin-bottom: 5px;
@@ -37,3 +39,4 @@
 .practice-projects-title{
     text-align: center;
 }
+

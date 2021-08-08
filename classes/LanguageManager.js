@@ -106,6 +106,14 @@ export default class languageManager {
                       <p>I have ${yearsOfExperience} years of experience</p>
                       <p>and I'd like to be part of your team</p>
                    </div>
+                    <div class="social-networks">
+                        <a href="https://www.linkedin.com/in/jose-david-esmoris-1750b720b/" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/josedavms13" target="_blank">
+                            <i class="fab fa-github-square"></i>
+                        </a>
+                  </div>
 
             `
                 break
@@ -116,8 +124,15 @@ export default class languageManager {
                       <p>Yo soy Jose David Esmoris,</p>
                        <p>soy desarrollador frontend</p>
                       <p>Tengo ${yearsOfExperience} años de experiencia</p>
-                      <p>y quisiera ser parte de tu equipo</p>
-                      
+                      <p>y quisiera ser parte de tu equipo</p>                      
+                  </div>
+                  <div class="social-networks">
+                        <a href="https://www.linkedin.com/in/jose-david-esmoris-1750b720b/"  target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/josedavms13" target="_blank">
+                            <i class="fab fa-github-square"></i>
+                        </a>
                   </div>
                    
 
@@ -170,7 +185,6 @@ export default class languageManager {
                     }
         }
                 }
-
     }
 
 
