@@ -1,0 +1,11 @@
+@media (min-width: 1000px) {
+    .description-features-container{
+        display: flex;
+        width: 70%;
+        margin: auto;
+    }
+    .project-description{
+        max-width: 50%;
+    }
+}
+

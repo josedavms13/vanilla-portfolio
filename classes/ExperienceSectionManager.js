@@ -152,22 +152,26 @@ export default class experienceSectionManager {
                         <img src="${cardImage}" alt="card_image">
                     </a>
                 </div>
-                
-                <p class="project-description">
-                    ${description}
-                </p>
-                
-                <div class="features-and-tech-container">
-                    <div class="project-features card-explanation-block" id="Project-features">
-                        <h6 id="Features-title">${featuresTitle}</h6>
-                        <div class="project-features-list experience-list">
-                            ${featuresList}
-                        </div>
+                <div class="description-features-container">
+                    <div class="project-description-container">
+                        <h6 id="Project-description-title">Description</h6>
+                        <p class="project-description">
+                            ${description}
+                        </p>
                     </div>
-                    <div class="project-technologies card-explanation-block" id="Project-Technologies">
-                        <h6 id="Technologies-title">${technologiesTitle}</h6>
-                        <div class="project-technologies-list experience-list">
-                            ${technologiesList}
+                    
+                    <div class="features-and-tech-container">
+                        <div class="project-features card-explanation-block" id="Project-features">
+                            <h6 id="Features-title">${featuresTitle}</h6>
+                            <div class="project-features-list experience-list">
+                                ${featuresList}
+                            </div>
+                        </div>
+                        <div class="project-technologies card-explanation-block" id="Project-Technologies">
+                            <h6 id="Technologies-title">${technologiesTitle}</h6>
+                            <div class="project-technologies-list experience-list">
+                                ${technologiesList}
+                            </div>
                         </div>
                     </div>
                 </div>
