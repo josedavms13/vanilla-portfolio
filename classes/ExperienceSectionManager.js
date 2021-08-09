@@ -11,8 +11,6 @@ export default class experienceSectionManager {
         this.setTittles();
         this.setPracticeProjects();
 
-
-        console.log(this.practiceProjects);
     }
 
     setTittles() {
@@ -24,7 +22,6 @@ export default class experienceSectionManager {
         // endregion Real projects
 
         tittlesContainer.innerText = this.setSectionTittle();
-        console.log(this.language)
     }
 
     setSectionTittle(){
@@ -74,10 +71,10 @@ export default class experienceSectionManager {
 
         switch(this.language){
             case 'english':
-                document.getElementById('Practice-projects-title').innerText = 'Practice Projects';
+                // document.getElementById('Practice-projects-title').innerText = 'Practice Projects';
                 break
             case 'spanish':
-                document.getElementById('Practice-projects-title').innerText = 'Proyectos de práctica';
+                // document.getElementById('Practice-projects-title').innerText = 'Proyectos de práctica';
                 break
         }
 
@@ -102,8 +99,6 @@ export default class experienceSectionManager {
 
         let description;
 
-        console.log(cardTechnologies);
-        console.log(Array.isArray(cardTechnologies.english));
         switch (this.language){
             case 'english':
                 featuresTitle = 'Features';

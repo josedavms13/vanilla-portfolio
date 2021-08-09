@@ -14,12 +14,11 @@ button{
 
 body{
     background-color: rgba(12, 2, 2, 0.42) !important;
-    /*box-sizing: border-box;*/
-    /*overflow: hidden;*/
+
 }
 
 section{
-    /*backdrop-filter: blur(20px);*/
+
     width: 100%;
     padding: 10%;
 }

@@ -92,6 +92,10 @@
     cursor: pointer;
 }
 
+.skill-box a:visited{
+    color: white;
+}
+
 
 
 /*.main-skills-container i:hover{*/
