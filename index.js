@@ -403,6 +403,9 @@ document.getElementById('Redux-skill').addEventListener('click', () => {
 //region Contact Section
 
 //region sending contact info
+
+/// MISSING TO SHOW CONFIRMATION MESSAGE
+
 const btn = document.getElementById('Submit-button');
 
 const messageContainer = document.getElementById('Message-sending-response-titles-container');
