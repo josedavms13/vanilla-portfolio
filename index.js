@@ -130,6 +130,7 @@ function languageManagement(language) {
     //endregion REACT PORTFOLIO BYPASS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     setSectionsYPosition();
+
 }
 
 
@@ -450,12 +451,36 @@ document.getElementById('Contact-form')
 
 //endregion sending contact info
 
+let sendingState = 0;
+
+console.log(messageSendingResults)
 
 function messageResult() {
-    messageSendingResults.classList.remove('d-none');
-    setTimeout(() => {
-        messageSendingResults.classList.add('d-none');
-    }, 1300)
+
+    sendingState++;
+
+    console.log(sendingState);
+
+    switch (sendingState){
+        case 1:
+            console.log('sending');
+            messageSendingResults.innerHTML = LANGUAGE_STATE.contactManager.setMessageResponse('inProgress');
+            messageSendingResults.style.backgroundColor='#080d18';
+            messageSendingResults.classList.remove('d-none');
+            break
+        case 2:
+            console.log('sent');
+            messageSendingResults.style.backgroundColor = '#17b4b7';
+            messageSendingResults.innerHTML = LANGUAGE_STATE.contactManager.setMessageResponse('successful');
+
+            setTimeout(() => {
+                messageSendingResults.classList.add('d-none');
+            }, 1300)
+            break
+    }
+
+
+
 
 }
 
