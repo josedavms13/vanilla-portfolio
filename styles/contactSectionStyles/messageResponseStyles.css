@@ -2,12 +2,12 @@
 
     z-index: 999999;
 
-    position: absolute;
+    position: fixed;
 
 
     min-height: 50vh;
     --message-sending-response-width : 80vw;
-    max-width: var(--message-sending-response-width);
+    width: var(--message-sending-response-width);
 
     top: 30vh;
     left: calc((100vw - var(--message-sending-response-width))/2);
@@ -25,9 +25,4 @@
     border: #001f38 solid 2px;
 }
 
-.message-successful{
-    background-color: #17b4b7;
-}
-.message-fail{
-    background-color: #17b4b7;
-}
+

@@ -1,9 +1,6 @@
 
 function setComments(data, labels){
 
-    console.log('data ', data)
-    console.log('labels ', labels)
-
     let postCards = ``;
 
     let postElement;

@@ -130,6 +130,7 @@ function languageManagement(language) {
     //endregion REACT PORTFOLIO BYPASS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     setSectionsYPosition();
+
 }
 
 
@@ -140,9 +141,7 @@ function languageManagement(language) {
 const video = document.getElementById('Background-video');
 video.addEventListener('canplay', (e) => isReadyToPlay(e));
 
-function isReadyToPlay(e) {
-    console.log('ready to play');
-    console.log('event => ', e);
+function isReadyToPlay() {
 
     video.play();
 
@@ -247,7 +246,6 @@ function shouldIStayOrShouldIGo(technology) {
 
     switch (technology) {
         case 'react':
-            console.log('to react portfolio');
             break
 
         case 'vanilla':
@@ -282,10 +280,6 @@ function setSectionsYPosition() {
     skillsPosition = skillsSection.offsetTop + yOffset;
     contactPosition = contactSection.offsetTop + yOffset;
 
-    console.log('commentPosition ', commentPosition)
-    console.log('skillsSection ', skillsPosition)
-    console.log('contactPosition ', contactPosition)
-    console.log('POSITION SET ----------------------')
 }
 
 
@@ -295,12 +289,11 @@ let windowOffset;
 document.addEventListener('scroll', () => {
 
     windowOffset = window.pageYOffset;
-    console.log(windowOffset);
 
    switch (true){
 
        case windowOffset < homePosition:
-           console.log('home');
+
            navbarLabel.innerText = LANGUAGE_STATE.navbarSections.home;
 
 
@@ -309,12 +302,12 @@ document.addEventListener('scroll', () => {
        case windowOffset > experiencePosition && windowOffset < commentPosition:
 
            navbarLabel.innerText = LANGUAGE_STATE.navbarSections.experience;
-           console.log('experience');
+
            break
 
        case SERVER_RESPONDED && windowOffset > commentPosition && windowOffset < skillsPosition:
 
-           console.log('Comments')
+
            navbarLabel.innerText = LANGUAGE_STATE.navbarSections.comments;
 
            break
@@ -322,15 +315,13 @@ document.addEventListener('scroll', () => {
        case windowOffset > skillsPosition && windowOffset < contactPosition:
 
            navbarLabel.innerText = LANGUAGE_STATE.navbarSections.skills;
-           console.log('Skills');
+
 
            break
 
        case windowOffset > contactPosition:
 
            navbarLabel.innerText = LANGUAGE_STATE.navbarSections.contact;
-           console.log('Contact')
-
            break
 
 
@@ -348,7 +339,6 @@ document.addEventListener('scroll', () => {
 
 function askAndShowComments() {
 
-    console.log('showing comments');
 
 
     getOpinions()
@@ -369,12 +359,10 @@ function showComments(data) {
 
     //Generate comments cards
     const commentCardInfo = setComments(data, LANGUAGE_STATE.setCommentSection().labels);
-    console.log(commentCardInfo);
 
     //Show posted comments
     commentPostContainer.classList.remove('d-none')
     document.getElementById('All-post-dynamic-container').innerHTML = commentCardInfo
-    console.log(data)
 }
 
 
@@ -416,6 +404,9 @@ document.getElementById('Redux-skill').addEventListener('click', () => {
 //region Contact Section
 
 //region sending contact info
+
+/// MISSING TO SHOW CONFIRMATION MESSAGE
+
 const btn = document.getElementById('Submit-button');
 
 const messageContainer = document.getElementById('Message-sending-response-titles-container');
@@ -448,7 +439,6 @@ document.getElementById('Contact-form')
                 messageContainer.innerHTML = LANGUAGE_STATE.contactManager.setMessageResponse('success');
                 messageResult();
 
-                console.log('message sent')
             })
             .catch(() => {
                 //fail
@@ -461,12 +451,36 @@ document.getElementById('Contact-form')
 
 //endregion sending contact info
 
+let sendingState = 0;
+
+console.log(messageSendingResults)
 
 function messageResult() {
-    messageSendingResults.classList.remove('d-none');
-    setTimeout(() => {
-        messageSendingResults.classList.add('d-none');
-    }, 1300)
+
+    sendingState++;
+
+    console.log(sendingState);
+
+    switch (sendingState){
+        case 1:
+            console.log('sending');
+            messageSendingResults.innerHTML = LANGUAGE_STATE.contactManager.setMessageResponse('inProgress');
+            messageSendingResults.style.backgroundColor='#080d18';
+            messageSendingResults.classList.remove('d-none');
+            break
+        case 2:
+            console.log('sent');
+            messageSendingResults.style.backgroundColor = '#17b4b7';
+            messageSendingResults.innerHTML = LANGUAGE_STATE.contactManager.setMessageResponse('successful');
+
+            setTimeout(() => {
+                messageSendingResults.classList.add('d-none');
+            }, 1300)
+            break
+    }
+
+
+
 
 }
 

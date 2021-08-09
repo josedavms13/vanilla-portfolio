@@ -103,7 +103,6 @@ export default class languageManager {
                     <div class="welcome-description">
                       <p>My name is Jose David Esmoris</p>
                       <p>I am a frontend developer</p>
-                      <p>I have ${yearsOfExperience} years of experience</p>
                       <p>and I'd like to be part of your team</p>
                    </div>
                     <div class="social-networks">
