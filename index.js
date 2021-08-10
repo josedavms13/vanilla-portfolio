@@ -138,12 +138,15 @@ function languageManagement(language) {
 
 
 //region Play Video
+
 const video = document.getElementById('Background-video');
+video.classList.add('d-none');
 video.addEventListener('canplay', (e) => isReadyToPlay(e));
 
 function isReadyToPlay() {
 
     video.play();
+    video.classList.remove('d-none');
 
 }
 
