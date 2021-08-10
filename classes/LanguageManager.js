@@ -21,6 +21,8 @@ export default class languageManager {
         this.experienceManager = new experienceSectionManager(this.language);
         this.skillsManager = new skillsSectionManager(this.language);
         this.contactManager = new contactSectionManager(this.language)
+
+        this.setCVLinks();
     }
 
     setReactInvitation() {
@@ -52,7 +54,7 @@ export default class languageManager {
             </li>
             <li class="nav-item"><a class="nav-link active" aria-current="page" href="#Experience-container">Proyectos</a></li>
             <li class="nav-item"><a class="nav-link active" aria-current="page" href="#Skills-container">Habilidades</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#Contact-section">Hoja de vida / CV</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#CV-Download-link">Hoja de vida / CV</a></li>
             <li class="nav-item"><a class="nav-link active" aria-current="page" href="#Contact-section">Contacto</a></li>
             
             `
@@ -186,5 +188,33 @@ export default class languageManager {
                 }
     }
 
+    setCVLinks(){
+        switch (this.language){
+            case 'english':
+                document.getElementById('CV-Download-link').innerHTML =`
+                <a href="./media/documents/Jose-David-Esmoris-Resume-EN.pdf" download>
+                <div class="download-icon">
+                    <div id="Download-cv">
+                        <i class="fas fa-file-download fa-3x"></i>
+                    </div>
+                </div>
+                <h4 id="Download-cv-title">Download CV</h4>
+            </a>
+                `
+                break
 
+            case  'spanish':
+                document.getElementById('CV-Download-link').innerHTML =`
+                <a href="./media/documents/Jose-David-Esmoris-Resume-ES.pdf" download>
+                <div class="download-icon">
+                    <div id="Download-cv">
+                        <i class="fas fa-file-download fa-3x"></i>
+                    </div>
+                </div>
+                <h4 id="Download-cv-title">Download CV</h4>
+            </a>
+                `
+                break
+        }
+    }
 }
