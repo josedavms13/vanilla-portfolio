@@ -23,7 +23,20 @@
         width: 50%;
         border-right: #8d8d8d solid 1px;
 
+        justify-content: center;
 
+        padding: 10px 20px;
+    }
+
+    .project-description-container h6{
+        border: none;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+    }
+    .project-description-container p{
+        margin: 0;
+        padding: 10px;
     }
 
     .project-description{
