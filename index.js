@@ -453,23 +453,23 @@ document.getElementById('Contact-form')
 
 let sendingState = 0;
 
-console.log(messageSendingResults)
+
 
 function messageResult() {
 
     sendingState++;
 
-    console.log(sendingState);
+
 
     switch (sendingState){
         case 1:
-            console.log('sending');
+
             messageSendingResults.innerHTML = LANGUAGE_STATE.contactManager.setMessageResponse('inProgress');
             messageSendingResults.style.backgroundColor='#080d18';
             messageSendingResults.classList.remove('d-none');
             break
         case 2:
-            console.log('sent');
+
             messageSendingResults.style.backgroundColor = '#17b4b7';
             messageSendingResults.innerHTML = LANGUAGE_STATE.contactManager.setMessageResponse('successful');
 
