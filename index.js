@@ -138,14 +138,14 @@ function languageManagement(language) {
 
 
 //region Play Video
-const video = document.getElementById('Background-video');
-video.addEventListener('canplay', (e) => isReadyToPlay(e));
-
-function isReadyToPlay() {
-
-    video.play();
-
-}
+// const video = document.getElementById('Background-video');
+// video.addEventListener('canplay', (e) => isReadyToPlay(e));
+//
+// function isReadyToPlay() {
+//
+//     video.play();
+//
+// }
 
 
 //endregion Play Video
