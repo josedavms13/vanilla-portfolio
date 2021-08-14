@@ -124,7 +124,6 @@ export default class languageManager {
                    <div class="welcome-description">
                       <p>Yo soy Jose David Esmoris,</p>
                        <p>soy desarrollador frontend</p>
-                      <p>Tengo ${yearsOfExperience} años de experiencia</p>
                       <p>y quisiera ser parte de tu equipo</p>                      
                   </div>
                   <div class="social-networks">
