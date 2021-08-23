@@ -1,8 +1,8 @@
 function pickRandomProjectOnSkill(skill){
 
     const javaScriptSkill = ['Practice1', 'Practice0', 'Practice2', 'Practice3'];
-    const htmlSkill = ['Practice1', 'Practice0', 'Practice2', 'Practice3'];
-    const cssSkill = ['Practice1', 'Practice0', 'Practice2', 'Practice3'];
+    const htmlSkill = ['Practice1', 'Practice0', 'Practice2', 'Practice3', "Practice4"];
+    const cssSkill = ['Practice1', 'Practice0', 'Practice2', 'Practice3', "Practice4"];
     const reactSkill = ['Practice0', 'Practice2', 'Practice3'];
     const redux = [''];
 
