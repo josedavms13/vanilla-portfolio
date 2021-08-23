@@ -66,24 +66,7 @@ const practiceProjects = [{
         gitHub: "https://github.com/josedavms13/http-crud.git",
         webPage: 'https://flamboyant-hopper-b5a28a.netlify.app/'
     }
-}, {
-    id : 4,
-    title: "Weather-Clock App",
-    image: "--",
-    description: {
-        english: "It is a simple clock that get the current weather based on your location. It displays a different message depending on the weather and changes the background color based on the current time. Temperature units can be displayed in Celsius or Farenheith",
-        spanish: "Es un reloj sencillo que toma el estado del tiempo basado en tu localización. Admás muestra un mensaje diferente dependiendo del clima y cambia el color de fondo dependiendo de la hora. La temperatura se puede cambiar entre grados Celsius o Farenheith "
-    },
-    features: {
-        english: ["API fetching", "Dynamic state changes", "Use of User Location", "Responsive Design"],
-        spanish: ["Consumo de API", "Cambio de estado dinámico", "Uso de la localización del usuario", "Diseño Responsivo"]
-    },
-    technologies: ["ReactJS", "CSS", "Location"],
-    links: {
-        gitHub: "https://github.com/josedavms13/WeatherApp.git",
-        webPage: 'https://flamboyant-bardeen-8426e3.netlify.app'
-    }
-    },
+},
     {
     template: true,
     id : 1,
